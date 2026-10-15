@@ -778,7 +778,431 @@ body.rp-resizing-row,body.rp-resizing-row *{cursor:row-resize!important;user-sel
 @media(max-width:600px){.dmr-actions{width:100%}.dmr-actions .edbtn{flex:1;justify-content:center}.dmr-valid{margin-left:0}.dmr-source textarea{min-height:290px}}
 
 .point-table th{color:var(--blue)}
-</style><link rel="stylesheet" href="form-builder.css"><link rel="stylesheet" href="browse-client.css"><link rel="stylesheet" href="settings.css"></head>
+</style><style id="form-builder-inline-css">body.forms-open #homePage,body.forms-open #pointPage,body.forms-open #chartsPage,body.forms-open #reportsPage,body.forms-open #dischargePage{display:none!important}
+body.form-home-open #homePage{display:none!important}
+#homePage[hidden]{display:none!important}
+#formsPage[hidden],#formHomePage[hidden]{display:none!important}
+#formsPage .point-intro .header-actions .edbtn{display:inline-flex;align-items:center;gap:6px;font-size:13px;min-height:40px;white-space:nowrap}
+#formsPage .point-intro .header-actions .material-symbols-outlined{font-size:19px!important}
+#formsPage .ch-table td:first-child{width:52%}
+#formsPage .ch-table .ch-name{font-weight:700}
+#formsPage .ch-table .ch-row-actions .ch-icon{width:30px;height:30px}
+#formsPage .ch-table .ch-row-actions .material-symbols-outlined{font-size:18px!important}
+#formsPage .ch-table .ch-icon:not(.ch-danger):hover,#formsPage .ch-table .ch-icon:not(.ch-danger):focus-visible{background:var(--blue-soft);color:var(--blue)}
+#formsPage .ch-table .ch-icon.ch-danger:hover,#formsPage .ch-table .ch-icon.ch-danger:focus-visible{background:#fde9e9;color:#c91d23}
+#formsPage .fb-home-tag{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:7px 11px;margin-left:0;background:#e7f5ee;color:#177a61;font-size:11px;font-weight:800;vertical-align:middle;white-space:nowrap}
+#formsPage .fb-home-tag .material-symbols-outlined{font-size:13px!important}
+#formsPage .fb-search-toolbar{display:flex;align-items:center;gap:10px;width:100%;box-sizing:border-box;margin:0 0 20px;padding:12px;border:1px solid #d8e3ea;border-radius:12px;background:#fff;box-shadow:0 2px 8px #183a4b06}
+#formsPage .fb-search-box{position:relative;display:flex;align-items:center;flex:1 1 auto;min-width:0;height:42px;margin:0}
+#formsPage .fb-search-box>.material-symbols-outlined{position:absolute;left:15px;z-index:1;color:#8197a5;font-size:19px!important;pointer-events:none}
+#formsPage .fb-search-box input{display:block;width:100%;height:42px;box-sizing:border-box;padding:0 14px 0 42px;border:1px solid #cfdde5;border-radius:8px;background:#fff;color:var(--ink);outline:0;font:inherit;font-size:13px}
+#formsPage .fb-search-box input:focus{border-color:#4d9dbc;box-shadow:0 0 0 3px #a8d7e750}
+#formsPage .fb-view-toggle{display:inline-flex;align-items:center;gap:2px;flex:none;padding:3px;border:1px solid #d1dce4;border-radius:11px;background:#fff}
+#formsPage .fb-view-toggle button{display:grid;place-items:center;flex:none;width:34px;height:34px;padding:0;border:0;border-radius:7px;background:#fff;color:#71869a}
+#formsPage .fb-view-toggle button:hover:not(.active),#formsPage .fb-view-toggle button:focus-visible:not(.active){background:var(--blue-soft);color:var(--blue)}
+#formsPage .fb-view-toggle button.active{background:#477ea6;color:#fff;box-shadow:none}
+#formsPage .fb-view-toggle .material-symbols-outlined{font-size:17px!important}
+@media(max-width:560px){#formsPage .fb-search-toolbar{gap:8px;padding:10px}#formsPage .fb-view-toggle{gap:2px}#formsPage .fb-view-toggle button{width:32px;height:32px}#formsPage .fb-search-box,#formsPage .fb-search-box input{height:40px}}
+#formsPage .fb-table-home{display:inline-flex;align-items:center;gap:5px;min-height:30px;padding:5px 9px;border:1px solid #cbd9e1;border-radius:7px;background:#fff;color:var(--blue);font:inherit;font-size:11px;font-weight:700;white-space:nowrap}
+#formsPage .fb-table-home:hover,#formsPage .fb-table-home:focus-visible{background:var(--blue-soft);border-color:#afd1de}
+#formsPage .fb-table-home .material-symbols-outlined{font-size:15px!important}
+#formsPage{padding-bottom:36px}
+.fb-page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:23px}
+.fb-kicker{display:block;color:var(--blue);font-size:10px;font-weight:800;letter-spacing:1.3px;margin-bottom:8px}
+.fb-page-head h1{font-size:29px;letter-spacing:-.6px;margin:0 0 6px;color:var(--navy)}
+.fb-page-head p{margin:0;color:var(--muted);font-size:14px}
+.fb-new-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;min-height:41px;font-size:13px;padding:10px 17px}
+.fb-new-button .material-symbols-outlined{font-size:19px!important}
+.fb-overview{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:29px}
+.fb-overview>div{display:flex;align-items:center;gap:13px;padding:17px 20px;border:1px solid var(--line);border-radius:11px;background:white;box-shadow:0 3px 12px #183a4b08}
+.fb-overview-icon{width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:9px;background:var(--blue-soft);color:var(--blue)}
+.fb-overview-icon.home{background:#e7f5ee;color:#238668}
+.fb-overview-icon .material-symbols-outlined{font-size:21px!important}
+.fb-overview strong,.fb-overview small{display:block}
+.fb-overview strong{font-size:14px;color:var(--navy);line-height:1.3}
+.fb-overview small{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.35}
+.fb-list-toolbar{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px}
+.fb-list-toolbar h2{font-size:19px;margin:0 0 4px;color:var(--navy)}
+.fb-list-toolbar p{font-size:12px;margin:0;color:var(--muted)}
+.fb-search{display:flex;align-items:center;gap:8px;width:min(310px,100%);min-height:39px;padding:0 11px;border:1px solid #cfdde5;border-radius:8px;background:white;color:var(--muted)}
+.fb-search:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px #71adc333}
+.fb-search .material-symbols-outlined{font-size:19px!important}
+.fb-search input{width:100%;border:0;background:transparent;outline:0;color:var(--ink);font:inherit;font-size:13px;min-width:0}
+.fb-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:17px}
+.fb-card{min-width:0;background:#fff;border:1px solid var(--line);border-radius:11px;box-shadow:0 4px 15px #183a4b09;overflow:hidden;transition:border-color .15s,box-shadow .15s,transform .15s}
+.fb-card:hover{border-color:#a8ccd9;box-shadow:0 9px 22px #183a4b13;transform:translateY(-2px)}
+.fb-card[hidden],.fb-no-results[hidden]{display:none!important}
+.fb-card-preview{height:104px;padding:14px 17px;background:linear-gradient(145deg,#f7fbfc,#eaf3f7);border-bottom:1px solid var(--line);overflow:hidden}
+.fb-mini-heading{display:block;width:42%;height:8px;border-radius:5px;background:#6c9caf;margin-bottom:11px;opacity:.75}
+.fb-mini-layout{display:flex;align-items:flex-start;gap:7px;flex-wrap:wrap}
+.fb-mini-block{display:block;flex:1 1 30%;height:37px;min-width:31px;max-width:43%;background:#fff;border:1px solid #d6e6ec;border-radius:5px;box-shadow:0 2px 4px #1e4b5d0a}
+.fb-mini-block.fb-mini-image{background:linear-gradient(135deg,#9ccac6,#3c8a9e);border-color:#b8d8d9}
+.fb-mini-block.fb-mini-label{height:13px;background:#9bbbc8;border:0;box-shadow:none}
+.fb-mini-placeholder{color:#9cb6c1;margin:8px auto}.fb-mini-placeholder .material-symbols-outlined{font-size:29px!important}
+.fb-card-body{padding:17px 18px 16px}
+.fb-card-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;min-height:24px}
+.fb-card h3{margin:0;color:var(--navy);font-size:16px;line-height:1.35;overflow-wrap:anywhere}
+.fb-card p{color:var(--muted);font-size:12px;margin:6px 0 0}
+.fb-card .fb-home-tag{display:inline-flex;align-items:center;gap:3px;border-radius:99px;padding:3px 7px;background:#e7f5ee;color:#238668;font-size:10px;font-weight:700;white-space:nowrap}
+.fb-home-tag .material-symbols-outlined{font-size:13px!important}
+.fb-card-actions{display:flex;align-items:center;gap:7px;margin-top:17px;padding-top:14px;border-top:1px solid #edf2f5}
+.fb-card-actions .edbtn{flex:1;min-height:36px;justify-content:center;gap:5px;font-size:12px;display:inline-flex;align-items:center}
+.fb-card-actions .material-symbols-outlined{font-size:17px!important}
+.fb-no-results{padding:28px;text-align:center;border:1px dashed var(--line);border-radius:9px;color:var(--muted);font-size:13px;background:#fff}
+.fb-icon-button{width:36px;height:36px;display:grid;place-items:center;padding:0;border:0;border-radius:7px;background:transparent;color:#bf4145}
+.fb-icon-button:hover,.fb-icon-button:focus-visible{color:#c91d23;background:#fde9e9}
+.fb-empty-list{border:1px dashed #bdcfda;background:#fff;border-radius:10px;text-align:center;padding:70px 20px;color:var(--muted)}
+.fb-list>.fb-empty-list{grid-column:1/-1}
+.fb-empty-list h2{color:var(--navy);margin:10px 0 5px}
+.fb-empty-list p{margin:0 0 20px}
+@media(max-width:720px){.fb-page-head,.fb-list-toolbar{align-items:stretch;flex-direction:column}.fb-new-button{align-self:flex-start}.fb-search{width:100%}.fb-overview{grid-template-columns:1fr}}
+#formsPage .fb-list{grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:none;gap:16px}
+#formsPage .fb-card{position:relative;min-height:0;border-radius:12px;box-shadow:0 2px 7px #183a4b08;overflow:visible;transform:none}
+#formsPage .fb-card:hover{transform:none;border-color:var(--line);box-shadow:0 2px 7px #183a4b08}
+#formsPage .fb-card-body{position:relative;display:flex;flex-direction:column;min-height:0;box-sizing:border-box;padding:22px}
+#formsPage .fb-card-title{min-height:32px;align-items:flex-start;padding-right:0}
+#formsPage .fb-card-title-actions{display:flex;align-items:center;gap:8px;flex:none;margin:-5px -5px 0 8px}
+#formsPage .fb-card-menu{position:relative;flex:none}
+#formsPage .fb-card-menu>summary{display:grid;place-items:center;width:32px;height:32px;border:0;border-radius:7px;background:transparent;color:var(--muted);list-style:none;cursor:pointer}
+#formsPage .fb-card-menu>summary::-webkit-details-marker{display:none}
+#formsPage .fb-card-menu>summary:hover,#formsPage .fb-card-menu>summary:focus-visible,#formsPage .fb-card-menu[open]>summary{background:var(--blue-soft);color:var(--blue)}
+#formsPage .fb-card-menu>summary .material-symbols-outlined{font-size:20px!important}
+#formsPage .fb-card-menu-popover{position:absolute;z-index:40;top:calc(100% + 6px);right:0;width:190px;padding:6px;border:1px solid #d5e0e6;border-radius:9px;background:#fff;box-shadow:0 10px 28px #183a4b24}
+#formsPage .fb-card-menu-popover button{display:flex;align-items:center;gap:9px;width:100%;min-height:36px;padding:7px 9px;border:0;border-radius:6px;background:#fff;color:var(--navy);font:inherit;font-size:12px;text-align:left}
+#formsPage .fb-card-menu-popover button:hover:not(:disabled),#formsPage .fb-card-menu-popover button:focus-visible:not(:disabled){background:var(--blue-soft);color:var(--blue)}
+#formsPage .fb-card-menu-popover button:disabled{color:#278268;background:#f2faf6;cursor:default}
+#formsPage .fb-card-menu-popover button.danger{color:#c91d23}
+#formsPage .fb-card-menu-popover button.danger:hover,#formsPage .fb-card-menu-popover button.danger:focus-visible{background:#fde9e9;color:#c91d23}
+#formsPage .fb-card-menu-popover .material-symbols-outlined{font-size:17px!important}
+#formsPage .fb-card:has(.fb-card-menu[open]){z-index:30}
+#formsPage .fb-card h3{font-size:16px}
+#formsPage .fb-card-meta{display:flex;align-items:center;gap:12px;margin-top:7px;color:var(--muted);font-size:11px}
+#formsPage .fb-card-meta span{padding:5px 8px;border-radius:6px;background:#f1f5f7;color:#567083;font-weight:700}
+#formsPage .fb-card-meta time{white-space:nowrap}
+#formsPage .fb-card-actions{margin-top:20px;padding-top:16px;border-top:1px solid #e6edf1;gap:8px}
+#formsPage .fb-card-actions .edbtn{min-height:36px;background:#fff;border-color:#cbd8e0;color:var(--navy);font-size:12px}
+#formsPage .fb-card-actions .edbtn:hover,#formsPage .fb-card-actions .edbtn:focus-visible{background:var(--blue-soft);border-color:#b9d8e4;color:var(--blue)}
+#formsPage .fb-card-action-spacer{flex:1}
+#formsPage .fb-card-buttons{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+#formsPage .fb-card-buttons .edbtn{flex:none;min-width:78px;padding:7px 11px}
+#formsPage .ch-table .fb-home-action.active{background:#e7f5ee;color:#238668;cursor:default;opacity:1}
+#formsPage .ch-table .fb-home-action.active:hover{background:#e7f5ee;color:#238668}
+@media(max-width:980px){#formsPage .fb-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){#formsPage .fb-list{grid-template-columns:1fr}}
+.fb-viewbar,.fb-editorbar{display:flex;align-items:center;gap:10px;min-height:56px;padding:8px 16px;background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:16px}
+body.form-edit-open main>.workspace{padding:64px 0 0}
+body.form-edit-open #formsPage{padding:0}
+body.form-edit-open .fb-editorbar{min-height:58px;margin:0;padding:8px 16px;border:0;border-bottom:1px solid var(--line);border-radius:0;gap:16px;justify-content:space-between;flex-wrap:nowrap;box-shadow:0 2px 8px #183a4b08}
+.fb-editor-identity,.fb-editor-actions,.fb-quick-tools{display:flex;align-items:center}
+.fb-editor-identity{gap:10px;min-width:0}
+.fb-editor-actions{gap:7px;flex-wrap:nowrap;justify-content:flex-end}
+.fb-editorbar .fb-back{border:0;background:transparent;flex:none;width:34px;height:34px}
+.fb-editorbar .fb-back:hover{background:var(--blue-soft);border-color:#b9d8e4}
+.fb-editor-title{display:flex;min-width:0}
+.fb-editorbar .fb-editor-title input{width:220px;max-width:100%;height:34px;min-height:34px;padding:4px 10px;border:1px solid var(--line);background:#f7f9fa;border-radius:6px;color:var(--navy);font-size:13px;font-weight:600}
+.fb-editorbar .fb-editor-title input:hover,.fb-editorbar .fb-editor-title input:focus{border-color:#a9cad9;background:white}
+.fb-editorbar .fb-size{display:inline-flex;align-items:center;gap:5px;border:0;background:transparent;padding:6px 0;color:#91a0ad;font-size:10px;white-space:nowrap}
+.fb-editorbar .fb-size .material-symbols-outlined{font-size:16px!important}
+.fb-editorbar .fb-icon-tool{width:34px;min-height:34px;height:34px;padding:0;justify-content:center;border:0;background:#f7f9fa}
+.fb-editorbar .fb-icon-tool:hover:not(:disabled){background:var(--blue-soft)}
+.fb-editorbar .fb-grid-button:not(.active){background:transparent;color:var(--muted)}
+.fb-editorbar .fb-grid-button:not(.active):hover,.fb-editorbar .fb-grid-button:not(.active):focus-visible{background:var(--blue-soft);color:var(--blue)}
+.fb-editorbar .fb-grid-button.active{background:#477ea6;color:#fff}
+.fb-editorbar .fb-grid-button.active:hover,.fb-editorbar .fb-grid-button.active:focus-visible{background:#477ea6;color:#fff}
+.fb-editor-divider{display:block;flex:none;width:1px;height:26px;background:var(--line)}
+.fb-editorbar .fb-home-button{white-space:nowrap}
+.fb-editorbar .edbtn.primary{min-width:124px;justify-content:center;background:#477ea6;border-color:#477ea6;color:#fff}
+.fb-editorbar .edbtn.primary:hover:not(:disabled){background:#386b91;border-color:#386b91}
+.fb-view-nav{display:flex;align-items:center;margin:0 0 8px}
+.fb-viewbar{justify-content:space-between}
+.fb-viewbar h1{margin:0;padding:0;border:0;font-size:20px;flex:1;overflow-wrap:anywhere}
+.fb-viewbar .edbtn,.fb-editorbar .edbtn{min-height:36px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.fb-viewbar .material-symbols-outlined,.fb-editorbar .material-symbols-outlined{font-size:18px!important}
+.fb-back{width:34px;height:34px;border:0;background:transparent;border-radius:7px;display:grid;place-items:center;color:var(--blue)}
+.fb-back:hover{background:var(--blue-soft)}
+.fb-editorbar input{width:200px;min-height:34px;font-size:13px}
+.fb-editorbar .fb-size{color:var(--muted);font-size:11px;white-space:nowrap}
+.fb-editorbar .fb-spacer{flex:1}
+.fb-editorbar .fb-home-button.active{background:#e3f4ed;border-color:#b1dccb;color:#178361}
+.fb-editorbar .fb-grid-button.active{background:#477ea6;color:#fff}
+.fb-editorbar .fb-tool-divider{height:24px;border-left:1px solid var(--line)}
+.fb-builder{display:grid;grid-template-columns:195px minmax(0,1fr) 235px;min-height:580px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.fb-builder>.fb-palette,.fb-builder>.fb-properties{position:static;inset:auto;width:auto;height:auto;min-width:0;max-width:none;margin:0;padding:0;color:var(--ink);background:#fff;box-shadow:none;border-radius:0;overflow:auto}
+.fb-builder>.fb-palette{display:flex;flex-direction:column}
+.fb-builder>.fb-properties{display:block}
+body.form-edit-open .fb-builder{grid-template-columns:220px minmax(0,1fr) 250px;min-height:calc(100vh - 122px);height:calc(100vh - 122px);border:0;border-radius:0}
+body.form-edit-open .fb-viewport{height:100%;min-height:0;max-height:none;padding:30px;background-color:#eef4f7}
+body.form-edit-open .fb-properties{background:#f8fafb}
+body.form-edit-open .fb-sidebar-title{background:#f9fbfc}
+.fb-palette-tip{margin-top:auto}
+.fb-palette{border-right:1px solid var(--line)}
+.fb-properties{border-left:1px solid var(--line)}
+.fb-sidebar-title{padding:13px 15px;border-bottom:1px solid var(--line);font-size:11px;font-weight:800;letter-spacing:.8px;color:var(--muted)}
+.fb-group-title{padding:15px 15px 6px;font-size:10px;font-weight:800;letter-spacing:.7px;color:#92a5b2}
+.fb-palette-list{padding:0 8px 14px}
+.fb-palette button{display:flex;align-items:center;gap:9px;width:100%;padding:8px;border:0;background:transparent;text-align:left;border-radius:7px;font-size:12px;cursor:grab}
+.fb-palette button:hover,.fb-palette button:focus-visible{background:var(--blue-soft);color:var(--blue)}
+.fb-palette button .material-symbols-outlined{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:6px;background:#eef5f9;color:var(--blue);font-size:17px!important}
+.fb-palette button[data-add="feature"] .material-symbols-outlined,.fb-palette button[data-add="button"] .material-symbols-outlined{background:#f1edff;color:#7861dc}
+.fb-palette button[data-add="hero"] .material-symbols-outlined,.fb-palette button[data-add="ellipse"] .material-symbols-outlined{background:#fff0f4;color:#db658c}
+.fb-palette button[data-add="field"] .material-symbols-outlined,.fb-palette button[data-add="chip"] .material-symbols-outlined{background:#e8f7f1;color:#3b9d79}
+.fb-palette button[data-add="image"] .material-symbols-outlined,.fb-palette button[data-add="rectangle"] .material-symbols-outlined{background:#fff4e8;color:#dc9250}
+.fb-palette-tip{border-top:1px solid var(--line);padding:12px 14px;color:var(--muted);font-size:11px;line-height:1.5}
+.fb-viewport{overflow:auto;min-width:0;background-color:#eff4f8;background-image:radial-gradient(#c6d6df .8px,transparent .8px);background-size:20px 20px;padding:24px;max-height:calc(100vh - 235px);min-height:580px}
+.fb-stage{position:relative;box-shadow:0 8px 22px #153a501c;border:1px solid #d8e4ea;overflow:hidden;flex:none}
+.fb-stage.grid{background-image:radial-gradient(#c6d6df 1px,transparent 1px);background-size:10px 10px}
+.fb-stage.drag-over{outline:3px solid var(--blue);outline-offset:3px}
+.fb-component{position:absolute;box-sizing:border-box;overflow:hidden;user-select:none;touch-action:none}
+.fb-builder .fb-component{cursor:move}
+.fb-builder .fb-component.selected{outline:2px solid var(--blue);outline-offset:1px}
+.fb-resize{display:none;position:absolute;right:0;bottom:0;width:13px;height:13px;background:var(--blue);border:2px solid #fff;border-radius:3px;cursor:nwse-resize;z-index:2}
+.fb-builder .fb-component.selected .fb-resize{display:block}
+.fb-comp-content{width:100%;height:100%;overflow:hidden}
+.fb-comp-label{display:flex;align-items:center;font-weight:700;white-space:pre-wrap;line-height:1.15}
+.fb-comp-card{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:1px solid #dae6ec;border-radius:10px;box-shadow:0 2px 6px #1938490c}
+.fb-comp-card .material-symbols-outlined{flex:none;color:var(--blue);font-size:26px!important}
+.fb-comp-card strong{display:block;font-size:15px;line-height:1.2}
+.fb-comp-card small{display:block;color:var(--muted);font-size:12px;line-height:1.35;margin-top:4px}
+.fb-comp-feature{background:linear-gradient(125deg,#e7f4f7,#fff);border:1px solid #d8e8ed;border-radius:10px;padding:16px;display:flex;flex-direction:column;justify-content:center}
+.fb-comp-feature strong{font-size:20px}.fb-comp-feature small{color:var(--muted);margin-top:5px}
+.fb-comp-kpi{background:white;border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-direction:column;justify-content:center}
+.fb-comp-kpi small{color:var(--muted)}.fb-comp-kpi strong{font-size:26px;color:var(--blue)}
+.fb-comp-image{display:block;width:100%;height:100%;object-fit:cover;border-radius:9px}
+.fb-comp-field{display:grid;gap:5px;font-size:11px;font-weight:600}.fb-comp-field input{width:100%;height:32px;background:white}
+.fb-comp-button{width:100%;height:100%;border:0;border-radius:7px;background:var(--blue);color:#fff;font-weight:700}
+.fb-comp-chip{display:grid;place-items:center;width:100%;height:100%;border-radius:99px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:700}
+.fb-comp-shape{width:100%;height:100%;background:#d7eaf2;border:1px solid #a9ccdc}
+.fb-comp-shape.ellipse{border-radius:50%}
+.fb-comp-divider{border-top:2px solid #bbced8;margin-top:50%}
+.fb-properties-body{padding:15px}
+.fb-properties-body label{display:block;font-size:11px;color:var(--muted);margin-bottom:13px}
+.fb-properties-body input,.fb-properties-body select,.fb-properties-body textarea{display:block;width:100%;margin-top:5px;min-height:34px;border-color:var(--line);font-size:12px;color:var(--ink)}
+.fb-properties-body textarea{min-height:65px;resize:vertical}
+.fb-properties-body .fb-property-hint{font-size:11px;line-height:1.5;color:var(--muted);margin:-5px 0 16px}
+.fb-properties-body .fb-property-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.fb-properties-body .fb-delete-component{width:100%;justify-content:center;color:#b2383d;border-color:#f0c7c9}
+.fb-properties-body .fb-delete-component:hover{background:#fde9e9;color:#a91419}
+.fb-preview-area{overflow:auto;background:#edf3f7;border:1px solid var(--line);border-radius:10px;padding:24px;min-height:460px}
+.fb-preview-note{font-size:12px;color:var(--muted);margin:0 0 12px}
+.fb-home-preview{overflow:auto;padding:20px 0}
+#formHomePage .fb-home-commands{display:flex;justify-content:flex-end;gap:8px;margin-bottom:12px}
+.fb-dialog{width:min(560px,94vw);padding:0;border-radius:12px;overflow:hidden}
+.fb-dialog-head{display:flex;align-items:flex-start;gap:16px;padding:28px 28px 30px}
+.fb-dialog-icon{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:9px;background:#fde9e9;color:#df3030}
+.fb-dialog-icon.warning{background:var(--amber-soft);color:var(--amber)}
+.fb-dialog-icon.success{background:#e1f4e5;color:#38964a}
+.fb-dialog-head>div{flex:1}.fb-dialog-head h2{font-size:23px;line-height:1.25;margin:0;color:var(--navy)}
+.fb-dialog-head p{font-size:15px;line-height:1.55;margin:12px 0 0;color:#687685}
+.fb-dialog-head .ch-icon{border:0;color:#747b80;background:transparent}
+.fb-dialog-head .ch-icon:hover{background:var(--blue-soft);color:var(--blue)}
+.fb-dialog-foot{display:flex;justify-content:flex-end;gap:10px;padding:14px 28px;border-top:1px solid var(--line)}
+.fb-dialog-foot .edbtn{height:40px;min-height:40px;padding:0 18px}
+.fb-dialog-foot .fb-danger{background:#c91d23;border-color:#c91d23;color:white}
+.fb-dialog-foot .fb-danger:hover{background:#a91419;border-color:#a91419}
+.fb-dialog.fb-preview-dialog{width:min(1320px,94vw);max-width:none;height:min(88vh,900px);max-height:900px}
+.fb-dialog.fb-preview-dialog[open]{display:flex;flex-direction:column}
+.fb-preview-dialog .fb-dialog-head{align-items:center;padding:18px 22px;border-bottom:1px solid var(--line)}
+.fb-preview-dialog .fb-dialog-head>div{display:flex;align-items:center;min-width:0}
+.fb-preview-dialog .fb-dialog-head h2{font-size:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fb-preview-dialog .fb-dialog-body{flex:1;min-height:0;overflow:auto;padding:22px;background:#edf3f7}
+.fb-preview-dialog .fb-preview-canvas{width:max-content;min-width:100%;display:flex;justify-content:center}
+.fb-preview-dialog .fb-dialog-foot{flex:none;padding:14px 22px;background:#fff}
+.fb-preview-dialog .fb-dialog-foot .primary{display:inline-flex;align-items:center;gap:6px;background:#477ea6;border-color:#477ea6;color:#fff}
+.fb-preview-dialog .fb-dialog-foot .primary:hover{background:#386b91;border-color:#386b91}
+.fb-dialog.fb-unsaved-dialog{width:min(580px,94vw);border-radius:12px}
+.fb-unsaved-dialog .fb-dialog-head{align-items:center;gap:16px;border:0;padding:24px 24px 10px}
+.fb-unsaved-dialog .fb-dialog-head h2{flex:1;font-size:23px;line-height:1.3;color:var(--navy)}
+.fb-unsaved-dialog .fb-dialog-icon{width:44px;height:44px;border-radius:10px}
+.fb-unsaved-dialog .fb-dialog-icon .material-symbols-outlined{font-size:28px!important}
+.fb-unsaved-dialog .fb-dialog-body{padding:0 48px 26px 84px}
+.fb-unsaved-dialog .fb-dialog-body p{margin:0;font-size:15px;line-height:1.65;color:var(--muted)}
+.fb-unsaved-dialog .fb-dialog-foot{justify-content:space-between;padding:16px 24px;border-top:1px solid var(--line)}
+.fb-unsaved-dialog .fb-dialog-foot>div{display:flex;gap:10px}
+.fb-unsaved-dialog .fb-dialog-foot .edbtn{height:40px;min-height:40px;padding:0 16px}
+@media(max-width:480px){.fb-unsaved-dialog .fb-dialog-head{padding:20px 16px 12px;gap:10px}.fb-unsaved-dialog .fb-dialog-body{padding:0 20px 22px}.fb-unsaved-dialog .fb-dialog-foot{padding:14px 16px;flex-wrap:wrap}.fb-unsaved-dialog .fb-dialog-foot .edbtn{padding:0 12px}}
+@media(max-width:900px){.fb-builder{grid-template-columns:165px minmax(0,1fr)}.fb-properties{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}.fb-properties-body{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.fb-properties-body label{margin:0}}
+@media(max-width:640px){.fb-editorbar{flex-wrap:wrap}.fb-editorbar .fb-spacer{display:none}.fb-builder{grid-template-columns:1fr}.fb-palette{border-right:0;border-bottom:1px solid var(--line)}.fb-palette-list{display:grid;grid-template-columns:repeat(2,1fr)}.fb-viewport{min-height:420px;max-height:480px;padding:14px}.fb-dialog-head{padding:22px 18px 24px}.fb-dialog-foot{padding:12px 18px}}
+@media(max-width:1200px){body.form-edit-open .fb-editorbar{align-items:flex-start}body.form-edit-open .fb-editor-actions{flex:1 1 100%;justify-content:flex-start}body.form-edit-open .fb-builder{grid-template-columns:190px minmax(0,1fr) 220px}}
+@media(max-width:900px){body.form-edit-open .fb-builder{grid-template-columns:175px minmax(0,1fr);height:auto;min-height:620px}body.form-edit-open .fb-properties{grid-column:1/-1}body.form-edit-open .fb-viewport{min-height:600px;max-height:75vh}}
+@media(max-width:640px){body.form-edit-open .fb-editorbar{padding:12px 14px}body.form-edit-open .fb-editor-identity{flex-wrap:wrap}body.form-edit-open .fb-editor-title input{width:170px}body.form-edit-open .fb-editor-actions{gap:6px}body.form-edit-open .fb-builder{grid-template-columns:1fr}body.form-edit-open .fb-viewport{min-height:440px;max-height:65vh;padding:14px}}
+</style><style id="browse-client-inline-css">.bc-dialog{width:min(1180px,95vw);height:min(86vh,860px);max-width:none;max-height:860px;padding:0;border:1px solid #ccd9e1;border-radius:14px;background:#f7f9fb;color:var(--ink);box-shadow:0 26px 80px #071c2a4a;overflow:hidden}
+.bc-dialog[open]{display:flex;flex-direction:column}
+.bc-dialog::backdrop,.bc-query-dialog::backdrop,.bc-result-dialog::backdrop,.bc-confirm-dialog::backdrop{background:#061b286e}
+.bc-page{display:none}
+body.browse-client-open #homePage,body.browse-client-open #pointPage,body.browse-client-open #chartsPage,body.browse-client-open #reportsPage,body.browse-client-open #formsPage,body.browse-client-open #dischargePage{display:none!important}
+body.browse-client-open #browseClientPage{display:block}
+.bc-page-intro{margin-bottom:20px}
+.bc-panel{border:1px solid #dbe7ed;border-radius:14px;background:#fff;box-shadow:0 7px 24px #284b5908;overflow:hidden}
+.bc-page .bc-toolbar{padding:16px 20px}
+.bc-page .bc-table-shell{min-height:0;margin:18px 20px 0}
+.bc-page .bc-footer{padding:14px 20px 18px}
+.bc-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 26px;border-bottom:1px solid var(--line);background:#fff}
+.bc-head h2{margin:0;color:var(--navy);font-size:20px;line-height:1.3}
+.bc-icon-button{display:grid;place-items:center;flex:none;width:34px;height:34px;padding:0;border:0;border-radius:7px;background:transparent;color:#687b89}
+.bc-icon-button:hover,.bc-icon-button:focus-visible{background:var(--blue-soft);color:var(--blue)}
+.bc-icon-button .material-symbols-outlined{font-size:20px!important}
+.bc-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 26px;border-bottom:1px solid var(--line);background:#fff}
+.bc-toolbar-group{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.bc-toolbar .edbtn{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:8px 12px}
+.bc-toolbar .edbtn .material-symbols-outlined{font-size:18px!important}
+.bc-toolbar .bc-new-query{background:#fff;border-color:#d1e0e8;color:var(--ink)}
+.bc-toolbar .bc-new-query:hover:not(:disabled){background:var(--blue-soft);border-color:#62a8ca;color:var(--blue)}
+.bc-toolbar .bc-new-query .material-symbols-outlined{color:inherit}
+.bc-toolbar .bc-delete-selected{color:#c91d23;border-color:#e3a9ac}
+.bc-toolbar .bc-delete-selected:hover:not(:disabled){background:#fde9e9;border-color:#c91d23;color:#c91d23}
+.bc-toolbar .bc-send{background:#477ea6;border-color:#477ea6;color:#fff}
+.bc-toolbar .bc-send:hover:not(:disabled){background:#386b91;border-color:#386b91}
+.bc-table-shell{flex:1;min-height:0;margin:18px 26px 0;border:1px solid #ccd9e1;border-radius:9px;background:#fff;overflow:auto}
+.bc-table{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;font-size:13px}
+.bc-table th{position:sticky;top:0;z-index:2;padding:12px 10px;border-bottom:1px solid var(--line);background:var(--surface);color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.45px;text-align:left}
+.bc-table th:first-child,.bc-table td:first-child{width:44px;padding-left:14px;padding-right:4px;text-align:left}
+.bc-table th:nth-child(2){width:16%}.bc-table th:nth-child(3){width:27%}.bc-table th:nth-child(4){width:11%}.bc-table th:nth-child(5),.bc-table th:nth-child(6){width:20%}
+.bc-table td{padding:8px 10px;border-bottom:1px solid #e5edf1;background:#fff;vertical-align:middle}
+.bc-table th:first-child,.bc-table td:first-child{vertical-align:middle}
+.bc-table tbody tr:last-child td{border-bottom:0}
+.bc-table tbody tr:not(.selected):not(.bc-table-empty):hover td{background:#f1f5f8}
+.bc-table tbody tr.selected td{background:#f1f5f8}
+.bc-table tbody tr.bc-table-empty:hover td{background:#fff}
+.bc-table input[type="checkbox"],.bc-query-table input[type="checkbox"]{width:17px;height:17px;margin:0;accent-color:#397fa8}
+.bc-table .bc-tag-name{display:block;padding:8px 2px;color:var(--navy);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-weight:700;overflow-wrap:anywhere}
+.bc-table .bc-description{display:block;padding:8px 2px;color:var(--muted);line-height:1.4}
+.bc-cell-input{width:100%;height:38px;min-height:38px;padding:7px 9px;border:1px solid #ccd9e1;border-radius:7px;background:#fff;color:var(--ink);font:inherit}
+.bc-cell-input:focus{border-color:#4d9dbc;outline:0;box-shadow:0 0 0 3px #a8d7e750}
+.bc-cell-input:disabled,.bc-cell-input.bc-disabled-field{border-color:#d7e0e6;background:#eef2f4;color:#738794;opacity:.72;cursor:not-allowed;box-shadow:none}
+.bc-value-wrap{display:flex;align-items:center;gap:7px}
+.bc-value-wrap small{color:var(--muted);font-size:10px;white-space:nowrap}
+.bc-empty{padding:64px 20px!important;text-align:center!important;color:var(--muted)}
+.bc-empty strong{color:var(--navy);font-size:inherit}
+.bc-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 26px 20px;color:var(--muted);font-size:12px}
+.bc-footer .edbtn{min-height:40px;padding:8px 16px}
+.bc-query-dialog{width:min(840px,94vw);max-width:none;padding:0;border:1px solid #ccd9e1;border-radius:13px;background:#f7f9fb;color:var(--ink);box-shadow:0 24px 70px #071c2a4a;overflow:hidden}
+.bc-query-dialog[open],.bc-result-dialog[open]{display:flex;flex-direction:column}
+.bc-query-dialog .bc-head{padding:18px 24px}
+.bc-query-body{padding:16px 24px 6px}
+.bc-search{position:relative;display:flex;align-items:center;margin-bottom:12px}
+.bc-search .material-symbols-outlined{position:absolute;left:13px;color:#8197a5;font-size:19px!important}
+.bc-search input{width:100%;height:42px;padding:0 13px 0 40px;border:1px solid #cbd8e0;border-radius:8px;background:#fff;color:var(--ink);font:inherit}
+.bc-search input:focus{border-color:#4d9dbc;outline:0;box-shadow:0 0 0 3px #a8d7e750}
+.bc-query-list{height:310px;border:1px solid #ccd9e1;border-radius:8px;background:#fff;overflow:auto}
+.bc-query-table{width:100%;border-collapse:collapse;font-size:13px}
+.bc-query-table th{position:sticky;top:0;z-index:1;padding:11px 10px;background:var(--surface);border-bottom:1px solid var(--line);color:var(--blue);text-align:left;font-size:11px;font-weight:800;letter-spacing:.4px}
+.bc-query-table th:first-child,.bc-query-table td:first-child{width:44px;padding-left:14px;padding-right:4px;text-align:left}
+.bc-query-table td{padding:10px;border-bottom:1px solid #e4ebef;color:var(--muted)}
+.bc-query-table td:nth-child(2){color:var(--navy);font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.bc-query-table tbody tr{cursor:pointer}
+.bc-query-table tbody tr:not(.bc-query-empty):not(.selected):hover td{background:#f1f5f8}
+.bc-query-table tbody tr.selected td{background:#f1f5f8}
+.bc-query-table tbody tr.bc-query-empty{cursor:default}
+.bc-query-table tbody tr.bc-query-empty:hover td{background:#fff}
+.bc-query-summary{margin:10px 0 14px;color:var(--muted);font-size:12px}
+.bc-range{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px 0 18px;border-top:1px solid var(--line)}
+.bc-range-group{display:grid;gap:12px;min-width:0;margin:0;padding:0;border:0}
+.bc-range-group legend{margin:0 0 8px;padding:0;color:var(--navy);font-size:12px;font-weight:700}
+.bc-range label{display:block;color:var(--navy);font-size:12px;font-weight:700}
+.bc-range input{width:100%;height:42px;padding:8px 11px;border:1px solid #cfdde5;border-radius:8px;background:#fff;color:#243f4e;font:inherit;color-scheme:light}
+.bc-range .ui-control{display:block;width:100%}
+.bc-range .ui-trigger{width:100%;min-height:42px;justify-content:space-between;text-transform:none;letter-spacing:0}
+.bc-range input:focus{border-color:#4d9dbc;outline:0;box-shadow:0 0 0 3px #a8d7e750}
+.bc-date-field::-webkit-calendar-picker-indicator,.bc-time-field::-webkit-calendar-picker-indicator,.bc-cell-input[type="datetime-local"]::-webkit-calendar-picker-indicator{opacity:.7;cursor:pointer}
+.bc-query-footer,.bc-result-footer{display:flex;justify-content:flex-end;gap:10px;padding:14px 24px 20px;border-top:1px solid var(--line);background:#fff}
+.bc-query-footer .edbtn,.bc-result-footer .edbtn{min-height:40px;padding:8px 17px}
+.bc-query-footer .edbtn{display:inline-flex;align-items:center;gap:6px}
+.bc-query-footer .edbtn .material-symbols-outlined{font-size:17px!important}
+.bc-query-footer .primary{background:#477ea6;border-color:#477ea6;color:#fff}
+.bc-result-dialog{width:min(520px,92vw);padding:0;border:1px solid #ccd9e1;border-radius:13px;background:#fff;color:var(--ink);box-shadow:0 24px 70px #071c2a4a;overflow:hidden}
+.bc-result-body{display:flex;gap:14px;padding:25px 24px 28px}
+.bc-result-icon{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:10px;background:#e6f5eb;color:#278268}
+.bc-result-body h2{margin:1px 0 6px;color:var(--navy);font-size:20px}.bc-result-body p{margin:0;color:var(--muted);line-height:1.55}
+.bc-confirm-dialog{width:min(520px,92vw);padding:0;border:1px solid #ccd9e1;border-radius:13px;background:#fff;color:var(--ink);box-shadow:0 24px 70px #071c2a4a;overflow:hidden}
+.bc-confirm-dialog[open]{display:flex;flex-direction:column}
+.bc-confirm-body{display:flex;align-items:flex-start;gap:14px;padding:24px}
+.bc-confirm-icon{display:grid;place-items:center;flex:none;width:42px;height:42px;border-radius:10px;background:#fde9e9;color:#c91d23}
+.bc-confirm-body p{margin:1px 0 6px;line-height:1.5}.bc-confirm-body small{display:block;color:var(--muted);line-height:1.5}
+.bc-confirm-footer{display:flex;justify-content:flex-end;gap:10px;padding:14px 24px 20px;border-top:1px solid var(--line);background:#fff}
+.bc-confirm-footer .edbtn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 17px}
+.bc-confirm-delete{border-color:#c91d23!important;background:#c91d23!important;color:#fff!important}.bc-confirm-delete:hover{border-color:#a8171c!important;background:#a8171c!important}
+.bc-error{display:none;margin:14px 26px 10px;padding:10px 12px;border:1px solid #f0c2c5;border-radius:7px;background:#fff1f1;color:#a5242b;font-size:12px}
+.bc-error:not(:empty){display:block}
+@media(max-width:800px){.bc-toolbar{align-items:flex-start;flex-direction:column}.bc-toolbar-group{width:100%}.bc-table-shell,.bc-page .bc-table-shell{margin:14px}.bc-footer{padding:12px 14px 16px}.bc-range{grid-template-columns:1fr}.bc-query-list{height:270px}}
+@media print{body.browse-client-open aside,body.browse-client-open main>header,.bc-page-intro,.bc-toolbar,.bc-footer,.bc-error{display:none!important}body.browse-client-open>main{margin:0!important}body.browse-client-open main>.workspace{padding:0!important}.bc-panel{border:0;box-shadow:none}.bc-page .bc-table-shell{margin:0;border:0;overflow:visible}.bc-table th{position:static}}
+</style><style id="settings-inline-css">:root{--primary-button:#233F51;--primary-button-hover:#315A70;--outline-button-hover:#f5f5f5;--outline-button-hover-border:#d0d5dd;--outline-button-hover-text:#475467;--icon-button-hover:#f7fafb;--icon-button-hover-border:#d9e4eb;--icon-button-hover-text:#397fa8}
+body.settings-open #homePage,body.settings-open #pointPage,body.settings-open #chartsPage,body.settings-open #reportsPage,body.settings-open #formsPage,body.settings-open #formHomePage,body.settings-open #dischargePage,body.settings-open #browseClientPage{display:none!important}
+#settingsPage[hidden]{display:none!important}
+.st-page{min-height:calc(100vh - 132px);font-family:"Public Sans",sans-serif}
+.st-intro{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:22px}
+.st-intro h1{margin:0 0 6px;padding:0;border:0;font-family:"Public Sans",sans-serif;font-size:24px;font-weight:700;line-height:1.25;letter-spacing:-.3px;color:var(--ink)}
+.st-intro h1::before,.st-intro h1::after{display:none}
+.st-intro p{margin:0;color:var(--muted);font-family:"Public Sans",sans-serif;font-size:14px;line-height:1.5}
+.st-shell{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:650px;border:1px solid var(--line);border-radius:13px;background:#fff;box-shadow:0 7px 24px #284b5908;overflow:hidden}
+.st-nav{display:block;padding:14px 0 0;background:#fff}
+.st-nav button{display:grid;grid-template-columns:24px minmax(0,1fr);align-items:center;column-gap:12px;width:100%;min-height:48px;padding:11px 20px 11px 36px;border:0;border-left:3px solid transparent;background:transparent;color:var(--ink);text-align:left;font-family:"Public Sans",sans-serif;font-size:13px;font-weight:500;line-height:1.35}
+.st-nav button:hover{background:var(--blue-soft);color:var(--blue)}
+.st-nav button.active{border-left-color:var(--blue);background:var(--blue-soft);color:var(--blue);font-weight:600}
+.st-nav .material-symbols-outlined{display:block;width:24px;font-size:19px!important;text-align:center}
+.st-content{min-width:0;border-left:1px solid var(--line);background:#fff}
+.st-section-head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 24px;border-bottom:1px solid var(--line)}
+.st-section-head h2{margin:0 0 2px;color:var(--navy);font-family:"Public Sans",sans-serif;font-size:16px;font-weight:700;line-height:1.3;letter-spacing:0}.st-section-head p{margin:0;color:var(--muted);font-family:"Public Sans",sans-serif;font-size:11px;line-height:1.45}
+.st-panel{padding:24px}
+.st-profile-top{display:grid;gap:12px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.st-profile-top h3{margin:0;font-size:14px}.st-photo-row{display:flex;align-items:center;gap:18px}.st-photo-actions{display:grid;gap:7px}.st-photo-actions small{color:var(--muted);font-size:10px}
+.st-avatar{display:grid;place-items:center;width:66px;height:66px;border-radius:50%;overflow:hidden;background:var(--navy);color:#fff;font-size:22px;font-weight:700}.st-avatar img{width:100%;height:100%;object-fit:cover}
+.st-form{padding-top:22px}.st-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px}
+.st-field{display:grid;gap:7px;color:var(--ink);font-size:12px;font-weight:700}.st-field.full{grid-column:1/-1}
+.st-required{color:#d3262d;font-weight:800}
+.st-field input,.st-field select{width:100%;height:42px;padding:9px 12px;border:1px solid #cfdce4;border-radius:8px;background:#fff;color:var(--ink);font:inherit;font-weight:400}
+.st-field input:focus,.st-field select:focus{border-color:var(--blue);outline:0;box-shadow:0 0 0 3px var(--blue-soft)}
+.st-field input:disabled{background:#f0f3f5;color:#8596a2;cursor:not-allowed}
+.st-field small{color:var(--muted);font-size:11px;font-weight:400}
+.st-form-actions{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:20px}.st-message{margin-right:auto;color:#27785f;font-size:12px}
+.st-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:10px 15px;border:1px solid #d1e0e8;border-radius:8px;background:#fff;color:#375667;font-size:12px;font-weight:600}
+.st-button:hover:not(:disabled){border-color:#62a8ca;background:#f3f9fc;color:var(--ink)}
+.st-button.primary{border-color:var(--primary-button);background:var(--primary-button);color:#fff}.st-button.primary:hover:not(:disabled){border-color:var(--primary-button-hover);background:var(--primary-button-hover);color:#fff}
+.st-button:disabled{opacity:.48;cursor:not-allowed}.st-button:disabled:hover{border-color:#cad9e2;background:#fff;color:var(--ink)}.st-button.primary:disabled:hover{border-color:#477ea6;background:#477ea6;color:#fff}
+.st-button.danger{border-color:#e7a8ab;color:#c91d23}.st-button.danger:hover{border-color:#c91d23;background:#fde9e9;color:#c91d23}
+.st-button.danger-solid{border-color:#c91d23;background:#c91d23;color:#fff}.st-button.danger-solid:hover:not(:disabled){border-color:#a9141a;background:#a9141a;color:#fff}
+.st-button .material-symbols-outlined{font-size:18px!important}
+.st-time-card{padding:22px;border:1px solid var(--line);border-radius:10px;background:#fbfcfd}
+.st-time-card h3{display:flex;align-items:center;gap:8px;margin:0 0 22px;font-size:15px}.st-time-card h3 .material-symbols-outlined{color:var(--status)}
+.st-current-zone{padding-bottom:18px;border-bottom:1px solid var(--line)}.st-current-zone span{display:block;margin-bottom:6px;color:var(--muted);font-size:12px}.st-current-zone strong{font-size:14px}
+.st-zone-controls{display:grid;gap:11px;margin-top:18px}.st-check{display:flex;align-items:center;gap:9px;color:var(--ink);font-size:13px}.st-check input{width:18px;height:18px;margin:0;accent-color:var(--blue)}
+.st-zone-note{color:var(--muted);font-size:11px;line-height:1.5}
+.st-security-block{padding:24px;border-bottom:1px solid var(--line)}.st-security-block:last-child{border-bottom:0}.st-security-block h3{margin:0 0 4px;font-size:15px}.st-security-block>p{margin:0 0 18px;color:var(--muted);font-size:12px}
+.st-password-wrap{position:relative}.st-password-wrap input{padding-right:38px}.st-password-toggle{position:absolute;right:4px;top:4px;display:grid;place-items:center;width:32px;height:34px;border:0;background:transparent;color:#718795}.st-password-toggle .material-symbols-outlined{font-size:17px!important}.st-password-toggle:hover{color:var(--blue)}.st-password-help{grid-column:1/2;margin-top:-9px;color:var(--muted);font-size:11px}
+.st-toggle-row{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line);border-radius:9px;background:#fbfcfd}.st-toggle-row>span:first-child{color:var(--blue)}.st-toggle-copy{flex:1}.st-toggle-copy strong{display:block;font-size:13px}.st-toggle-copy small{color:var(--muted)}
+.st-switch{position:relative;width:42px;height:23px;border:0;border-radius:20px;background:#aebbc5}.st-switch:after{content:'';position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:left .15s}.st-switch[aria-pressed="true"]{background:var(--blue)}.st-switch[aria-pressed="true"]:after{left:22px}
+.st-sessions{display:grid;gap:9px}.st-session{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:9px;background:#fbfcfd}.st-session>.material-symbols-outlined{color:var(--blue)}.st-session-copy{flex:1}.st-session-copy strong{display:block;font-size:12px}.st-session-copy small{display:block;color:var(--muted);font-size:10px}
+.st-active-tag,.st-status{display:inline-flex;align-items:center;border-radius:20px;padding:4px 9px;background:#ddf4e9;color:#27785f;font-size:10px;font-weight:700}.st-active-tag{margin-left:7px}
+.st-user-toolbar{display:grid;gap:12px;margin-bottom:18px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}.st-user-toolbar-main{display:flex;align-items:center;gap:10px}.st-search{position:relative;display:flex;align-items:center;flex:1}.st-search .material-symbols-outlined{position:absolute;left:12px;color:#8296a3;font-size:19px!important}.st-search input{width:100%;height:38px;padding:0 12px 0 39px;border:1px solid #cfdce4;border-radius:8px;font:inherit}
+.st-filter-panel{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;padding-top:14px;border-top:1px solid var(--line)}.st-filter-panel[hidden]{display:none}.st-filter-panel .st-field{gap:6px}.st-filter-panel .st-field select{height:38px;font-family:"Public Sans",sans-serif;font-size:12px;font-weight:400}.st-filter-actions{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between}.st-clear-filters{padding:4px 0;border:0;background:transparent;color:var(--blue);font-size:11px}.st-clear-filters:hover{text-decoration:underline}.st-filter-toggle[aria-expanded="true"]{border-color:var(--primary-button);background:var(--primary-button);color:#fff}.st-filter-toggle[aria-expanded="true"]:hover{border-color:var(--primary-button-hover);background:var(--primary-button-hover);color:#fff}
+.st-user-table-wrap{border:1px solid var(--line);border-radius:10px;overflow:auto}.st-user-table{width:100%;border-collapse:collapse;font-size:12px}.st-user-table th{padding:12px 14px;background:var(--surface);border-bottom:1px solid var(--line);color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.45px;text-align:left}.st-user-table td{padding:13px 14px;border-bottom:1px solid #e6edf1;vertical-align:middle}.st-user-table tr:last-child td{border-bottom:0}.st-user-table tbody tr:hover td{background:#f7fafb}.st-user-name strong{display:block;font-size:12px}.st-user-name small{display:block;color:var(--muted);font-size:10px}.st-user-actions{display:flex;justify-content:flex-start;gap:4px}.st-icon-button{display:grid;place-items:center;width:28px;height:28px;padding:0;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--blue)}.st-icon-button .material-symbols-outlined{font-size:16px!important}.st-icon-button:hover:not(:disabled){border-color:var(--line);background:var(--blue-soft)}.st-icon-button.danger{color:#c91d23}.st-icon-button:disabled{opacity:.3;cursor:not-allowed}.st-empty{padding:45px!important;text-align:center;color:var(--muted)}
+.st-dialog{width:min(760px,94vw);max-width:none;padding:0;border:1px solid #ccd9e1;border-radius:13px;background:#fff;color:var(--ink);box-shadow:0 24px 70px #071c2a4a;overflow:hidden}.st-dialog.compact,.st-dialog.st-dialog-success{width:min(520px,92vw)}.st-dialog::backdrop{background:#061b286e}.st-dialog[open]{display:flex;flex-direction:column}.st-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 24px;border-bottom:1px solid var(--line)}.st-dialog-head h2{margin:0 0 4px;font-size:19px}.st-dialog-head p{margin:0;color:var(--muted);font-size:12px}.st-dialog-close{display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:7px;background:transparent;color:#687b89}.st-dialog-close:hover{background:var(--blue-soft);color:var(--blue)}.st-dialog-body{padding:22px 24px}.st-dialog-footer{display:flex;justify-content:flex-end;gap:10px;padding:14px 24px 20px;border-top:1px solid var(--line)}
+.primary,.edbtn.primary,.st-button.primary,.ui-picker-footer button.ui-done,.ui-picker-footer button.ui-apply{border-color:var(--primary-button)!important;background:var(--primary-button)!important;color:#fff!important}
+.primary:hover:not(:disabled),.edbtn.primary:hover:not(:disabled),.st-button.primary:hover:not(:disabled),.ui-picker-footer button.ui-done:hover,.ui-picker-footer button.ui-apply:hover{border-color:var(--primary-button-hover)!important;background:var(--primary-button-hover)!important;color:#fff!important}
+select,select option{font-weight:400!important}
+.edbtn:not(.primary):not(.danger):not(.fb-danger):hover:not(:disabled),.edbtn:not(.primary):not(.danger):not(.fb-danger):focus-visible:not(:disabled),.st-button:not(.primary):not(.danger):not(.danger-solid):hover:not(:disabled),.st-button:not(.primary):not(.danger):not(.danger-solid):focus-visible:not(:disabled),.ch-icon:not(.ch-danger):hover:not(:disabled),.ch-icon:not(.ch-danger):focus-visible:not(:disabled),.bc-icon-button:hover:not(:disabled),.bc-icon-button:focus-visible:not(:disabled),.bc-toolbar .bc-new-query:hover:not(:disabled),.bc-toolbar .bc-new-query:focus-visible:not(:disabled),#formsPage .fb-view-toggle button:hover:not(.active),#formsPage .fb-view-toggle button:focus-visible:not(.active),#formsPage .fb-table-home:hover,#formsPage .fb-table-home:focus-visible,.fb-editorbar .fb-grid-button:not(.active):hover,.fb-editorbar .fb-grid-button:not(.active):focus-visible,.ui-picker-footer button.ui-cancel:hover,.ui-picker-footer button.ui-cancel:focus-visible,.pagination-footer .pagenumbers button:hover:not(.active),.pagination-footer .pagearrow:hover:not(:disabled){background:var(--outline-button-hover)!important;border-color:var(--outline-button-hover-border)!important;color:var(--outline-button-hover-text)!important}
+.ch-icon:not(.ch-danger):hover:not(:disabled),.ch-icon:not(.ch-danger):focus-visible:not(:disabled),.bc-icon-button:hover:not(:disabled),.bc-icon-button:focus-visible:not(:disabled),.st-icon-button:not(.danger):hover:not(:disabled),.st-icon-button:not(.danger):focus-visible:not(:disabled),.st-password-toggle:hover,.st-password-toggle:focus-visible,.st-dialog-close:hover,.st-dialog-close:focus-visible,.fb-editorbar .fb-icon-tool:not(.active):hover:not(:disabled),.fb-editorbar .fb-icon-tool:not(.active):focus-visible:not(:disabled),.fb-back:hover,.fb-back:focus-visible,.xclose:hover,.xclose:focus-visible,.close:hover,.close:focus-visible,.header-help button:hover,.header-help button:focus-visible,.controls .step button:hover,.controls .step button:focus-visible,.month-nav button:hover,.month-nav button:focus-visible,.pagination-footer .pagearrow:hover:not(:disabled),.pagination-footer .pagearrow:focus-visible:not(:disabled),#formsPage .fb-view-toggle button:hover:not(.active),#formsPage .fb-view-toggle button:focus-visible:not(.active),#formsPage .fb-card-menu>summary:hover,#formsPage .fb-card-menu>summary:focus-visible{background:var(--icon-button-hover)!important;border-color:var(--icon-button-hover-border)!important;color:var(--icon-button-hover-text)!important}
+.point-properties-dialog{max-height:none!important}.overlay:has(.point-properties-dialog){width:min(820px,96vw);max-height:none}.point-properties-dialog .dialog-head{padding:16px 22px 8px}.point-properties-dialog .dialog-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;overflow:visible;padding:10px 22px 12px}.point-properties-dialog .dialog-body>.edfield{margin:0}.point-properties-dialog .dialog-body>.edgrid{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.point-properties-dialog .dialog-body>.edgrid .edfield{margin:0}.point-properties-dialog .dialog-body>.point-equation-field{grid-column:1/-1}.point-properties-dialog .dialog-body>.option-section{margin:0;padding:10px 14px}.point-properties-dialog .radio-line{padding:4px 0;font-size:12px}.point-properties-dialog .dialog-footer{padding:12px 22px 16px;border-top:1px solid var(--line)}.required-mark{color:#c91d23;font-weight:700}
+#chartDialog.ch-unsaved-dialog,#reportDialog.rp-unsaved-dialog,.fb-dialog.fb-unsaved-dialog{width:min(560px,94vw)}#chartDialog.ch-unsaved-dialog .ch-dialog-head h2,#reportDialog.rp-unsaved-dialog .rp-modal-head h2,.fb-unsaved-dialog .fb-dialog-head h2{font-size:23px;line-height:1.25}#chartDialog.ch-unsaved-dialog .ch-dialog-body p,.rp-unsaved-dialog .rp-modal-body p,.fb-unsaved-dialog .fb-dialog-body p{font-size:15px;line-height:1.55}
+.st-account-settings{grid-column:1/-1;margin-top:4px;border:1px solid var(--line);border-radius:10px;background:#fbfcfd;overflow:hidden}.st-account-settings h3{display:flex;align-items:center;gap:8px;margin:0;padding:13px 16px;border-bottom:1px solid var(--line);font-size:14px}.st-account-settings h3 .material-symbols-outlined{color:var(--status);font-size:19px!important}.st-account-settings-body{display:grid;gap:12px;padding:16px}.st-status-control{display:flex;align-items:center;gap:11px}.st-status-control>span:first-child{min-width:46px;color:var(--muted);font-size:12px}.st-status-label{font-size:13px}.st-switch:disabled{opacity:.55;cursor:not-allowed}.st-account-settings p{margin:0;color:var(--muted);font-size:11px}.st-dialog-title-row{display:flex;align-items:flex-start;gap:14px}.st-dialog-status-icon{display:grid;place-items:center;flex:0 0 auto;width:40px;height:40px;border-radius:9px}.st-dialog-status-icon.warning{background:#fee8e8;color:#dc2626}.st-dialog-status-icon.success{background:#e3f7dc;color:#2eae41}.st-dialog-status-icon .material-symbols-outlined{font-size:23px!important}.st-dialog-message{margin:4px 0 0;color:var(--muted);font-size:14px;line-height:1.5}.st-dialog-success .st-dialog-head{border-bottom:0;padding-bottom:18px}.st-dialog-success .st-dialog-footer{padding-top:14px}
+.st-account-menu{position:fixed;z-index:500;top:64px;right:22px;width:216px;padding:8px 0;border:1px solid #d6e0e6;border-radius:9px;background:#fff;box-shadow:0 8px 24px #16324229;font-family:"Public Sans",sans-serif;overflow:hidden}.st-account-menu[hidden]{display:none}.st-account-summary{display:flex;align-items:center;gap:10px;padding:8px 16px 10px}.st-account-summary-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff}.st-account-summary-icon .material-symbols-outlined{font-size:17px!important}.st-account-summary strong,.st-account-summary small{display:block}.st-account-summary strong{font-size:12px}.st-account-summary small{color:var(--muted);font-size:10px}.st-account-menu hr{height:1px;margin:0 12px;border:0;background:var(--line)}.st-account-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 16px;border:0;border-radius:0;background:transparent;color:var(--ink);font-size:12px;text-align:left}.st-account-menu button:hover{background:var(--blue-soft);color:var(--blue)}.st-account-menu button .material-symbols-outlined{font-size:17px!important}.st-account-menu .logout{color:#c91d23}.st-account-menu .logout:hover{background:#fff2f2;color:#c91d23}
+.account .avatar{display:grid;place-items:center;width:40px;height:40px;padding:0;overflow:hidden}.account .avatar img{width:100%;height:100%;object-fit:cover}
+@media(max-width:850px){.st-shell{grid-template-columns:1fr}.st-nav{display:flex;overflow:auto;padding:8px;border-bottom:1px solid var(--line)}.st-content{border-left:0}.st-nav-label{display:none}.st-nav button{width:auto;min-width:max-content;border-left:0;border-bottom:3px solid transparent;padding:9px 13px}.st-nav button.active{border-left-color:transparent;border-bottom-color:var(--blue)}.st-form-grid{grid-template-columns:1fr}.st-field.full{grid-column:auto}.st-user-table{min-width:700px}}
+@media(max-width:560px){.st-panel,.st-security-block{padding:18px}.st-section-head{padding:13px 18px}.st-photo-row{align-items:flex-start}.st-form-actions{align-items:stretch;flex-direction:column}.st-form-actions .st-message{margin:0}.st-button{width:100%}.st-dialog-body{padding:18px}.st-user-toolbar-main{align-items:stretch;flex-direction:column}.st-filter-panel{grid-template-columns:1fr}.st-filter-actions{grid-column:auto}.st-account-menu{right:10px}.st-photo-actions{width:100%}}
+@media(max-width:700px){.overlay:has(.point-properties-dialog){max-height:90vh}.point-properties-dialog{max-height:90vh!important}.point-properties-dialog .dialog-body{display:block;overflow:auto}.point-properties-dialog .dialog-body>.edfield,.point-properties-dialog .dialog-body>.edgrid,.point-properties-dialog .dialog-body>.option-section{margin-bottom:12px}.point-properties-dialog .dialog-body>.edgrid{grid-template-columns:1fr 1fr}}
+
+/* Keep primary navigation available when the rail is collapsed. */
+body.nav-collapsed>aside{padding-left:10px;padding-right:10px}
+body.nav-collapsed>aside .brand{margin-bottom:22px}
+body.nav-collapsed>aside nav{display:grid;margin:0 -10px;gap:4px}
+body.nav-collapsed>aside nav .nav-label{display:none}
+body.nav-collapsed>aside nav button{justify-content:center;gap:0;width:100%;padding:13px 0}
+body.nav-collapsed>aside nav button>span:not(.material-symbols-outlined){display:none}
+body.nav-collapsed>aside nav button>.material-symbols-outlined{font-size:21px!important}
+body.nav-collapsed>aside .aside-foot{display:block;margin-left:-10px;margin-right:-10px;padding-top:14px}
+body.nav-collapsed>aside .aside-foot button{justify-content:center;width:100%;padding:12px 0}
+body.nav-collapsed>aside .aside-foot button>span:not(.material-symbols-outlined){display:none}
+body.nav-collapsed>aside .aside-foot .material-symbols-outlined{font-size:21px!important}
+</style></head>
 <body>
 <aside><div class="brand"><div class="logo">RV</div><div><strong>SystemView</strong><small>REPORTVIEW</small></div><span class="wtp">WTP</span><button id="collapse-nav" aria-label="Collapse navigation" title="Collapse navigation"><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button></div><nav aria-label="Main navigation"><button class="active" aria-label="Main menu" title="Main menu"><span class="material-symbols-outlined" aria-hidden="true">home</span> <span>Main menu</span></button><div class="nav-label">MONITORING &amp; ANALYSIS</div><button data-tool="Point Editor" aria-label="Point editor" title="Point editor"><span class="material-symbols-outlined" aria-hidden="true">my_location</span> <span>Point editor</span></button><button data-tool="Report View Browse Client" aria-label="Browse client" title="Browse client"><span class="material-symbols-outlined" aria-hidden="true">language</span> <span>Browse client</span></button><button data-tool="Chart Client" aria-label="Charts" title="Charts"><span class="material-symbols-outlined" aria-hidden="true">bar_chart</span> <span>Charts</span></button><div class="nav-label">REPORTING</div><button data-tool="Spreadsheet Client" aria-label="Reports" title="Reports"><span class="material-symbols-outlined" aria-hidden="true">table_chart</span> <span>Reports</span></button><button data-tool="Report View Editor — New page" aria-label="ReportView editor" title="ReportView editor"><span class="material-symbols-outlined" aria-hidden="true">edit_square</span> <span>ReportView editor</span></button><button data-tool="Electronic Discharge Monitoring Report — Client" aria-label="Electronic discharge" title="Electronic discharge"><span class="material-symbols-outlined" aria-hidden="true">upload</span> <span>Electronic discharge</span></button></nav><div class="aside-foot"><button data-tool="Settings" aria-label="Settings" title="Settings"><span class="material-symbols-outlined" aria-hidden="true">settings</span> <span>Settings</span></button></div></aside>
 <main><header><span class="plant">Cedar Creek WTP · Plant 0081</span><span class="connection"><i class="dot"></i>SCADA connected</span><div class="header-help"><button data-tool="Help" aria-label="Help"><span class="material-symbols-outlined" aria-hidden="true">help</span></button><button data-tool="About SystemView" aria-label="About SystemView"><span class="material-symbols-outlined" aria-hidden="true">info</span></button></div><button class="account" data-tool="Account"><span class="avatar">AC</span><span><b>Alex Chen</b><small>Administrator</small></span><span class="account-chevron"><span class="material-symbols-outlined" aria-hidden="true">expand_more</span></span></button></header><div class="workspace"><div id="homePage">
@@ -1818,4 +2242,119 @@ dialog.addEventListener('click',e=>{const b=e.target.closest('[data-dialog]');if
 document.querySelectorAll('[data-tool="Report View Editor — New page"]').forEach(b=>b.onclick=()=>confirmLeave(()=>go('forms')));
 addEventListener('hashchange',route);addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});route();
 })();
-</script><script src="browse-client.js"></script><script src="settings.js"></script></body></html>
+</script><script id="browse-client-inline-js">(() => {
+const icon=name=>'<span class="material-symbols-outlined" aria-hidden="true">'+name+'</span>';
+const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const valuesKey='systemview.pointValues.v1';
+const main=document.createElement('section'),query=document.createElement('dialog'),result=document.createElement('dialog'),deleteDialog=document.createElement('dialog');
+main.id='browseClientPage';main.className='bc-page';main.hidden=true;query.id='browseQueryDialog';query.className='bc-query-dialog';result.id='browseResultDialog';result.className='bc-result-dialog';deleteDialog.id='browseDeleteDialog';deleteDialog.className='bc-confirm-dialog';
+document.querySelector('.workspace').append(main);document.body.append(query,result,deleteDialog);
+let rows=[],selectedRows=new Set(),querySelection=new Set(),search='',sortDirection=1,rowCounter=0;
+const configuredPoints=()=>typeof points!=='undefined'?points:(()=>{try{return JSON.parse(localStorage.getItem('systemview.points.v1')||'[]')}catch{return[]}})();
+const readValues=()=>{try{const data=JSON.parse(localStorage.getItem(valuesKey)||'[]');return Array.isArray(data)?data:[]}catch{return[]}};
+const writeValues=data=>{localStorage.setItem(valuesKey,JSON.stringify(data))};
+const localDateTime=value=>{const date=value?new Date(value):new Date();if(!Number.isFinite(date.getTime()))return'';const local=new Date(date-date.getTimezoneOffset()*60000);return local.toISOString().slice(0,19)};
+const localDate=value=>localDateTime(value).slice(0,10);
+const localTime=value=>localDateTime(value).slice(11,19);
+const secondsOfDay=value=>{const date=new Date(value);return Number.isFinite(date.getTime())?date.getHours()*3600+date.getMinutes()*60+date.getSeconds():''};
+const displayDate=value=>{const date=new Date(value);return Number.isFinite(date.getTime())?date.toLocaleString('en-CA',{year:'numeric',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',second:'2-digit'}):value};
+const uid=()=>globalThis.crypto?.randomUUID?.()||'value-'+Date.now().toString(36)+'-'+(++rowCounter).toString(36);
+function pointById(id){return configuredPoints().find(point=>point.id===Number(id))}
+function openClient(){location.hash='#browse-client';route()}
+function route(){
+ const active=location.hash==='#browse-client';main.hidden=!active;document.body.classList.toggle('browse-client-open',active);if(!active)return;
+ document.body.classList.remove('point-open','charts-open','reports-open','forms-open','discharge-open','form-home-open','form-edit-open');
+ const dashboard=document.getElementById('homePage');if(dashboard)dashboard.hidden=true;
+ document.querySelectorAll('aside nav button').forEach(button=>{const on=button.dataset.tool==='Report View Browse Client';button.classList.toggle('active',on);if(on)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')});
+ document.title='SystemView — Browse Client';renderClient();
+}
+function renderClient(){
+ main.innerHTML='<div class="point-intro bc-page-intro"><div><h1>Browse Client</h1><p>Query and update values stored for tags configured in Point Editor.</p></div></div><div class="bc-panel"><div class="bc-toolbar"><div class="bc-toolbar-group"><button class="edbtn bc-new-query" data-bc="new-query">'+icon('bolt')+'New query</button><button class="edbtn" data-bc="print">'+icon('print')+'Print</button><button class="edbtn" data-bc="sort">'+icon('swap_vert')+'Sort</button><button class="edbtn bc-delete-selected" data-bc="delete-selected" '+(selectedRows.size?'':'disabled')+'>'+icon('delete')+'Delete selected</button></div><div class="bc-toolbar-group"><button class="edbtn" data-bc="add-row" '+(rows.length?'':'disabled')+'>'+icon('add')+'Row</button><button class="edbtn bc-send" data-bc="send" '+(rows.length?'':'disabled')+'>'+icon('database')+'Send to Database</button></div></div><p class="bc-error" role="alert"></p><div class="bc-table-shell"><table class="bc-table"><thead><tr><th><input type="checkbox" data-bc="select-all" aria-label="Select all rows" '+(rows.length&&selectedRows.size===rows.length?'checked':'')+'></th><th>HDVarname</th><th>HDDateTime</th><th>HDMSec</th><th>HDFloatValue</th><th>HDAlphaValue</th></tr></thead><tbody id="bcRows"></tbody></table></div><div class="bc-footer"><span id="bcRowCount">'+rows.length+' row(s)'+(selectedRows.size?' · '+selectedRows.size+' selected':'')+'</span></div></div>';
+ drawRows();
+}
+function drawRows(){
+ const body=main.querySelector('#bcRows');if(!body)return;
+ body.innerHTML=rows.length?rows.map(row=>{const point=pointById(row.pointId)||{},floatDisabled=!!row.floatDisabled,step=Math.pow(10,-Math.max(0,Math.min(15,Number(point.decimal)||0))),maxLength=Math.max(1,Number(point.width)||255),varname=row.hdVarname??row.name,msec=row.hdMSec??secondsOfDay(row.timestamp),floatValue=row.hdFloatValue??row.value,alphaValue=row.hdAlphaValue??'';return '<tr data-row="'+esc(row.id)+'" class="'+(selectedRows.has(row.id)?'selected':'')+'"><td><input type="checkbox" data-row-select="'+esc(row.id)+'" aria-label="Select '+esc(row.name)+'" '+(selectedRows.has(row.id)?'checked':'')+'></td><td><input class="bc-cell-input edinput" data-row-name="'+esc(row.id)+'" type="text" maxlength="80" value="'+esc(varname)+'" aria-label="HDVarname for '+esc(row.name)+'"></td><td><input class="bc-cell-input edinput" type="datetime-local" step="1" data-row-time="'+esc(row.id)+'" value="'+esc(row.timestamp)+'" aria-label="HDDateTime for '+esc(row.name)+'"></td><td><input class="bc-cell-input edinput" type="number" min="0" max="86399" step="1" data-row-seconds="'+esc(row.id)+'" value="'+esc(msec)+'" aria-label="HDMSec for '+esc(row.name)+'"></td><td><input class="bc-cell-input edinput '+(floatDisabled?'bc-disabled-field':'')+'" '+(floatDisabled?'type="number" value="" disabled':'data-row-float="'+esc(row.id)+'" type="number" inputmode="decimal" step="'+step+'" min="'+esc(point.min)+'" max="'+esc(point.max)+'" value="'+esc(floatValue)+'"')+' aria-label="HDFloatValue for '+esc(row.name)+'"></td><td><input class="bc-cell-input edinput" data-row-alpha="'+esc(row.id)+'" type="text" maxlength="'+maxLength+'" value="'+esc(alphaValue)+'" aria-label="HDAlphaValue for '+esc(row.name)+'"></td></tr>'}).join(''):'<tr class="bc-table-empty"><td colspan="6" class="bc-empty">No data. Use <strong>New query</strong> to fetch rows.</td></tr>';
+}
+function openQuery(){
+ querySelection=new Set();search='';const now=new Date(),start=new Date(now);start.setHours(0,0,0,0);
+ query.innerHTML='<div class="bc-head"><h2>New query</h2><button class="bc-icon-button" data-bcq="cancel" aria-label="Close query">'+icon('close')+'</button></div><div class="bc-query-body"><label class="bc-search">'+icon('search')+'<input type="search" id="bcPointSearch" placeholder="Search points…" aria-label="Search points"></label><div class="bc-query-list"><table class="bc-query-table"><thead><tr><th></th><th>POINT NAME</th><th>DESCRIPTION</th></tr></thead><tbody id="bcPointRows"></tbody></table></div><p class="bc-query-summary" id="bcSelectionCount">0 selected</p><div class="bc-range"><fieldset class="bc-range-group"><legend>From</legend><label><input class="edinput bc-date-field" id="bcFromDate" type="date" aria-label="From date" value="'+localDate(start)+'"></label><label><input class="edinput bc-time-field" id="bcFromTime" type="time" step="1" aria-label="From time" value="'+localTime(start)+'"></label></fieldset><fieldset class="bc-range-group"><legend>To</legend><label><input class="edinput bc-date-field" id="bcToDate" type="date" aria-label="To date" value="'+localDate(now)+'"></label><label><input class="edinput bc-time-field" id="bcToTime" type="time" step="1" aria-label="To time" value="'+localTime(now)+'"></label></fieldset></div></div><div class="bc-query-footer"><button class="edbtn" data-bcq="cancel">Cancel</button><button class="edbtn primary" data-bcq="add" disabled>'+icon('add')+'Add queries</button></div>';
+ drawPointChoices();query.showModal();query.querySelector('#bcPointSearch').focus();
+}
+function drawPointChoices(){
+ const list=configuredPoints().filter(point=>(point.name+' '+point.description).toLowerCase().includes(search.toLowerCase()));const body=query.querySelector('#bcPointRows');if(!body)return;
+ body.innerHTML=list.length?list.map(point=>'<tr data-query-point="'+point.id+'" class="'+(querySelection.has(point.id)?'selected':'')+'"><td><input type="checkbox" data-query-check="'+point.id+'" aria-label="Select '+esc(point.name)+'" '+(querySelection.has(point.id)?'checked':'')+'></td><td>'+esc(point.name)+'</td><td>'+esc(point.description)+'</td></tr>').join(''):'<tr class="bc-query-empty"><td colspan="3" class="bc-empty">No matching points.</td></tr>';
+ query.querySelector('#bcSelectionCount').textContent=querySelection.size+' selected';query.querySelector('[data-bcq="add"]').disabled=!querySelection.size;
+}
+function addQueries(){
+ const from=new Date(query.querySelector('#bcFromDate').value+'T'+query.querySelector('#bcFromTime').value),to=new Date(query.querySelector('#bcToDate').value+'T'+query.querySelector('#bcToTime').value);if(!Number.isFinite(from.getTime())||!Number.isFinite(to.getTime())||to<from)return;
+ const stored=readValues();for(const id of querySelection){const point=pointById(id);if(!point)continue;const matches=stored.filter(item=>item.pointId===point.id&&new Date(item.timestamp)>=from&&new Date(item.timestamp)<=to).sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp));const latest=matches[0],timestamp=localDateTime(latest?.timestamp||new Date()),floatDisabled=rows.length===0;rows.push({id:uid(),pointId:point.id,name:point.name,description:point.description,timestamp,hdVarname:latest?.name||point.name,hdMSec:latest?.msec??secondsOfDay(timestamp),hdFloatValue:floatDisabled?'':latest?.floatValue??latest?.value??'',hdAlphaValue:floatDisabled?latest?.alphaValue??latest?.value??'':latest?.alphaValue??'',floatDisabled,value:latest?.value??'',saved:!!latest})}
+ query.close();renderClient();
+}
+function addRow(){if(!rows.length)return openQuery();const source=rows.find(row=>selectedRows.has(row.id))||rows[rows.length-1],timestamp=localDateTime(new Date());rows.push({...source,id:uid(),timestamp,hdMSec:secondsOfDay(timestamp),hdFloatValue:'',hdAlphaValue:'',floatDisabled:false,value:'',saved:false});renderClient()}
+function deleteSelected(){if(!selectedRows.size)return;rows=rows.filter(row=>!selectedRows.has(row.id));selectedRows.clear();renderClient()}
+function requestDeleteSelected(){if(!selectedRows.size)return;const count=selectedRows.size;deleteDialog.innerHTML='<div class="bc-head"><h2>Delete selected rows?</h2><button class="bc-icon-button" data-bcd="cancel" aria-label="Close confirmation">'+icon('close')+'</button></div><div class="bc-confirm-body"><span class="bc-confirm-icon">'+icon('delete')+'</span><div><p>You are about to remove <strong>'+count+' selected row'+(count===1?'':'s')+'</strong> from the Browse Client table.</p><small>This only removes the rows from the current table. Values already sent to the database are unchanged.</small></div></div><div class="bc-confirm-footer"><button class="edbtn" data-bcd="cancel">Cancel</button><button class="edbtn bc-confirm-delete" data-bcd="confirm">'+icon('delete')+'Delete '+(count===1?'row':'rows')+'</button></div>';deleteDialog.showModal()}
+function setError(message=''){const box=main.querySelector('.bc-error');if(box)box.textContent=message}
+function sendValues(){
+ const stored=readValues(),next=[...stored];for(const row of rows){const point=pointById(row.pointId);if(!point)return setError('One or more tags no longer exist in Point Editor. Remove those rows and try again.');const stamp=new Date(row.timestamp),name=String(row.hdVarname??row.name).trim(),msec=Number(row.hdMSec??secondsOfDay(row.timestamp)),floatRaw=String(row.hdFloatValue??''),alphaRaw=String(row.hdAlphaValue??''),raw=floatRaw!==''?floatRaw:alphaRaw,width=Math.max(1,Number(point.width)||255);if(!name)return setError('Enter an HDVarname.');if(!Number.isFinite(stamp.getTime()))return setError('Enter a valid timestamp for '+name+'.');if(!Number.isInteger(msec)||msec<0||msec>86399)return setError('HDMSec for '+name+' must be between 0 and 86399.');if(raw==='')return setError('Enter a float or alpha value for '+name+'.');if(alphaRaw.length>width)return setError(name+' is limited to '+width+' characters by Point Editor.');if(floatRaw!==''){const value=Number(floatRaw),min=Number(point.min),max=Number(point.max),precision=Math.max(0,Number(point.decimal)||0),fraction=(floatRaw.split('.')[1]||'').length;if(!Number.isFinite(value))return setError('Enter a numeric value for '+name+'.');if(fraction>precision)return setError(name+' allows '+precision+' decimal place'+(precision===1?'':'s')+'.');if(Number.isFinite(min)&&value<min||Number.isFinite(max)&&value>max)return setError(name+' must be between '+point.min+' and '+point.max+'.')}
+  next.push({id:uid(),pointId:point.id,name,timestamp:stamp.toISOString(),msec,floatValue:floatRaw,alphaValue:alphaRaw,value:raw,updated:new Date().toISOString()});row.saved=true;
+ }
+ try{writeValues(next)}catch{return setError('The values could not be saved in browser storage.')}
+ setError();drawRows();document.dispatchEvent(new CustomEvent('systemview:point-values-updated',{detail:{count:rows.length}}));showResult(rows.length);
+}
+function showResult(count){result.innerHTML='<div class="bc-result-body"><span class="bc-result-icon">'+icon('check_circle')+'</span><div><h2>Values sent successfully</h2><p>'+count+' row'+(count===1?' was':'s were')+' saved to the point-value store and are now available to custom reports.</p></div></div><div class="bc-result-footer"><button class="edbtn primary" data-bcr="close">Close</button></div>';result.showModal()}
+main.addEventListener('click',event=>{const action=event.target.closest('[data-bc]')?.dataset.bc;if(!action)return;if(action==='new-query')openQuery();if(action==='print')window.print();if(action==='sort'){sortDirection*=-1;rows.sort((a,b)=>sortDirection*a.name.localeCompare(b.name)||new Date(a.timestamp)-new Date(b.timestamp));renderClient()}if(action==='delete-selected')requestDeleteSelected();if(action==='add-row')addRow();if(action==='send')sendValues();if(action==='select-all'){const checked=event.target.checked;selectedRows=checked?new Set(rows.map(row=>row.id)):new Set();renderClient()}});
+main.addEventListener('input',event=>{const id=event.target.dataset.rowName||event.target.dataset.rowTime||event.target.dataset.rowSeconds||event.target.dataset.rowFloat||event.target.dataset.rowAlpha,row=rows.find(item=>item.id===id);if(!row)return;if(event.target.dataset.rowName)row.hdVarname=event.target.value;if(event.target.dataset.rowTime){row.timestamp=event.target.value;row.hdMSec=secondsOfDay(row.timestamp);const seconds=main.querySelector('[data-row-seconds="'+CSS.escape(row.id)+'"]');if(seconds)seconds.value=row.hdMSec}if(event.target.dataset.rowSeconds)row.hdMSec=event.target.value;if(event.target.dataset.rowFloat)row.hdFloatValue=event.target.value;if(event.target.dataset.rowAlpha)row.hdAlphaValue=event.target.value;row.saved=false});
+main.addEventListener('change',event=>{const id=event.target.dataset.rowSelect;if(!id)return;event.target.checked?selectedRows.add(id):selectedRows.delete(id);renderClient()});
+query.addEventListener('input',event=>{if(event.target.id==='bcPointSearch'){search=event.target.value;drawPointChoices()}});
+query.addEventListener('click',event=>{const action=event.target.closest('[data-bcq]')?.dataset.bcq;if(action==='cancel'){query.close();return}if(action==='add'){addQueries();return}const row=event.target.closest('[data-query-point]');if(!row)return;const id=Number(row.dataset.queryPoint);querySelection.has(id)?querySelection.delete(id):querySelection.add(id);drawPointChoices()});
+query.addEventListener('click',event=>{if(event.target===query)query.close()});
+result.addEventListener('click',event=>{if(event.target.closest('[data-bcr="close"]')||event.target===result)result.close()});
+result.addEventListener('close',()=>{rows=[];selectedRows.clear();renderClient()});
+deleteDialog.addEventListener('click',event=>{const action=event.target.closest('[data-bcd]')?.dataset.bcd;if(action==='cancel'||event.target===deleteDialog){deleteDialog.close();return}if(action==='confirm'){deleteDialog.close();deleteSelected()}});
+document.querySelectorAll('[data-tool="Report View Browse Client"]').forEach(button=>button.onclick=openClient);
+addEventListener('hashchange',route);route();
+})();
+</script><script id="settings-inline-js">(() => {
+const page=document.createElement('section'),dialog=document.createElement('dialog'),key='systemview.settings.v1';
+page.id='settingsPage';page.className='st-page';page.hidden=true;dialog.id='settingsDialog';dialog.className='st-dialog';
+document.querySelector('.workspace').append(page);document.body.append(dialog);
+const icon=name=>'<span class="material-symbols-outlined" aria-hidden="true">'+name+'</span>';
+const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+const defaults={profile:{first:'Alex',last:'Chen',email:'alex.chen@rivercity.ca',phone:'+1 (416) 555-0142',role:'Administrator',photo:''},timezone:Intl.DateTimeFormat().resolvedOptions().timeZone||'America/Toronto',useSystem:true,users:[{id:'u1',name:'Alex Chen',email:'alex.chen@rivercity.ca',role:'Administrator',status:'Active',timezone:'America/Toronto'},{id:'u2',name:'Morgan Lee',email:'morgan.lee@rivercity.ca',role:'Operator',status:'Active',timezone:'America/Toronto'},{id:'u3',name:'Jamie Patel',email:'jamie.patel@rivercity.ca',role:'Report Author',status:'Active',timezone:'America/Toronto'},{id:'u4',name:'Taylor Brooks',email:'taylor.brooks@rivercity.ca',role:'Viewer',status:'Active',timezone:'America/Vancouver'}]};
+let state=defaults,active='profile',search='',filtersOpen=false,statusFilter='',roleFilter='';
+try{const saved=JSON.parse(localStorage.getItem(key)||'null');if(saved)state={...defaults,...saved,profile:{...defaults.profile,...saved.profile},users:Array.isArray(saved.users)?saved.users:defaults.users}}catch{}
+const persist=()=>{try{localStorage.setItem(key,JSON.stringify(state))}catch{}};
+let accountMenu;
+function syncTopAccount(){const account=document.querySelector('.account');if(!account)return;const p=state.profile,initials=((p.first[0]||'')+(p.last[0]||'')).toUpperCase(),avatar=account.querySelector('.avatar');if(avatar)avatar.innerHTML=p.photo?'<img src="'+esc(p.photo)+'" alt="">':esc(initials);const name=account.querySelector('b'),role=account.querySelector('small');if(name)name.textContent=p.first+' '+p.last;if(role)role.textContent=p.role}
+function setupAccountMenu(){const account=document.querySelector('.account');if(!account)return;accountMenu=document.createElement('div');accountMenu.className='st-account-menu';accountMenu.hidden=true;accountMenu.setAttribute('role','menu');document.body.append(accountMenu);const draw=()=>{const p=state.profile;accountMenu.innerHTML='<div class="st-account-summary"><span class="st-account-summary-icon">'+icon('person')+'</span><span><strong>'+esc(p.first+' '+p.last)+'</strong><small>'+esc(p.role)+'</small></span></div><hr><button type="button" data-st-account="profile" role="menuitem">'+icon('person')+'Profile</button><button type="button" data-st-account="settings" role="menuitem">'+icon('settings')+'Settings</button><hr><button type="button" class="logout" data-st-account="logout" role="menuitem">'+icon('logout')+'Logout</button>'};draw();account.setAttribute('aria-haspopup','menu');account.setAttribute('aria-expanded','false');account.onclick=event=>{event.stopPropagation();draw();accountMenu.hidden=!accountMenu.hidden;account.setAttribute('aria-expanded',String(!accountMenu.hidden))};accountMenu.addEventListener('click',event=>{const action=event.target.closest('[data-st-account]')?.dataset.stAccount;if(!action)return;accountMenu.hidden=true;account.setAttribute('aria-expanded','false');if(action==='profile'){active='profile';location.hash='#settings';render()}if(action==='settings'){location.hash='#settings';render()}});document.addEventListener('click',event=>{if(!accountMenu.hidden&&!accountMenu.contains(event.target)&&!account.contains(event.target)){accountMenu.hidden=true;account.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!accountMenu.hidden){accountMenu.hidden=true;account.setAttribute('aria-expanded','false');account.focus()}});syncTopAccount()}
+function openSettings(){location.hash='#settings'}
+function route(){const on=location.hash==='#settings';page.hidden=!on;document.body.classList.toggle('settings-open',on);if(!on)return;document.body.classList.remove('point-open','charts-open','reports-open','forms-open','discharge-open','browse-client-open','form-home-open','form-edit-open');const home=document.getElementById('homePage');if(home)home.hidden=true;document.querySelectorAll('aside nav button,aside .aside-foot button').forEach(button=>{const selected=button.dataset.tool==='Settings';button.classList.toggle('active',selected);if(selected)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')});document.title='SystemView — Settings';render()}
+const nav=()=>'<nav class="st-nav" aria-label="Settings sections">'+[['profile','person','Profile'],['timezone','schedule','Time zone'],['security','shield','Security'],['users','group','User management']].map(([id,glyph,label])=>'<button type="button" data-st-nav="'+id+'" class="'+(active===id?'active':'')+'" aria-current="'+(active===id?'page':'false')+'">'+icon(glyph)+label+'</button>').join('')+'</nav>';
+function render(){page.innerHTML='<div class="st-intro"><div><h1>Settings</h1><p>Manage your account, security, time zone, and team access.</p></div></div><div class="st-shell">'+nav()+'<div class="st-content" id="settingsContent"></div></div>';renderContent()}
+function renderContent(){const target=page.querySelector('#settingsContent');if(!target)return;if(active==='profile')profile(target);if(active==='timezone')timezone(target);if(active==='security')security(target);if(active==='users')users(target)}
+function profile(target){const p=state.profile,initials=((p.first[0]||'')+(p.last[0]||'')).toUpperCase(),avatar=p.photo?'<img src="'+esc(p.photo)+'" alt="Profile photo">':esc(initials);target.innerHTML='<div class="st-section-head"><div><h2>Profile</h2><p>View and update your account details.</p></div></div><div class="st-panel"><div class="st-profile-top"><h3>Profile photo</h3><div class="st-photo-row"><span class="st-avatar">'+avatar+'</span><div class="st-photo-actions"><button type="button" class="st-button primary" data-st-action="upload-photo">'+icon('upload')+'Upload new photo</button><small>JPG or PNG. Maximum file size 5MB.</small><input type="file" data-st-photo-input accept="image/jpeg,image/png" hidden></div></div></div><form class="st-form" id="stProfileForm"><div class="st-form-grid"><label class="st-field">First name<input name="first" required value="'+esc(p.first)+'"></label><label class="st-field">Last name<input name="last" required value="'+esc(p.last)+'"></label><label class="st-field full">Email address<input type="email" value="'+esc(p.email)+'" disabled><small>Email is managed by your administrator and cannot be changed here.</small></label><label class="st-field">Phone number<input name="phone" value="'+esc(p.phone)+'"></label><label class="st-field">Role<input value="'+esc(p.role)+'" disabled></label></div><div class="st-form-actions"><span class="st-message" role="status"></span><button class="st-button primary" type="submit">'+icon('save')+'Save changes</button></div></form></div>'}
+function timezone(target){const zones=['America/Toronto','America/Vancouver','America/Edmonton','America/Winnipeg','America/Halifax','UTC'];target.innerHTML='<div class="st-section-head"><div><h2>Time zone</h2><p>Control how dates and times are displayed across SystemView.</p></div></div><div class="st-panel"><div class="st-time-card"><div class="st-current-zone"><span>Current selected time zone</span><strong>'+esc(zoneLabel(state.timezone))+'</strong></div><form id="stZoneForm" class="st-zone-controls"><label class="st-check"><input type="checkbox" name="system" '+(state.useSystem?'checked':'')+'>Use my system time zone ('+esc(Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC')+')</label><label class="st-field">Select time zone<select name="timezone" '+(state.useSystem?'disabled':'')+'>'+zones.map(zone=>'<option value="'+zone+'" '+(zone===state.timezone?'selected':'')+'>'+esc(zoneLabel(zone))+'</option>').join('')+'</select></label><small class="st-zone-note">Stored as a standard time-zone identifier so daylight-saving changes are applied automatically. Dates are stored in UTC and converted for display.</small><div class="st-form-actions"><span class="st-message" role="status"></span><button class="st-button primary" type="submit">'+icon('save')+'Save changes</button></div></form></div></div>'}
+function zoneLabel(zone){const labels={'America/Toronto':'(UTC−05:00) Eastern Time — America/Toronto','America/Vancouver':'(UTC−08:00) Pacific Time — America/Vancouver','America/Edmonton':'(UTC−07:00) Mountain Time — America/Edmonton','America/Winnipeg':'(UTC−06:00) Central Time — America/Winnipeg','America/Halifax':'(UTC−04:00) Atlantic Time — America/Halifax','UTC':'(UTC+00:00) Coordinated Universal Time'};return labels[zone]||zone}
+function passwordField(name,label,help='',extraClass=''){return '<label class="st-field '+extraClass+'">'+label+'<span class="st-password-wrap"><input type="password" name="'+name+'" required autocomplete="'+(name==='current'?'current-password':'new-password')+'"><button type="button" class="st-password-toggle" data-st-password="'+name+'" aria-label="Show '+label.toLowerCase()+'">'+icon('visibility')+'</button></span>'+(help?'<small>'+help+'</small>':'')+'</label>'}
+function security(target){target.innerHTML='<div class="st-section-head"><div><h2>Security</h2><p>Manage your password and active sessions.</p></div></div><section class="st-security-block"><h3>Password management</h3><p>Update your password to keep your account secure.</p><form id="stPasswordForm"><div class="st-form-grid st-password-grid">'+passwordField('current','Current password','','full')+passwordField('next','New password')+passwordField('confirm','Confirm new password')+'<small class="st-password-help">Use at least 8 characters with letters and numbers.</small></div><div class="st-form-actions"><span class="st-message" role="status"></span><button class="st-button primary" type="submit">Change password</button></div></form></section><section class="st-security-block"><div class="st-section-head" style="padding:0 0 16px;border:0"><div><h3>Active sessions</h3><p>Manage devices where you are currently signed in.</p></div><button class="st-button" data-st-action="logout-all">Log out all sessions</button></div><div class="st-sessions"><div class="st-session">'+icon('computer')+'<div class="st-session-copy"><strong>Chrome on Windows <span class="st-active-tag">Active now</span></strong><small>Toronto, ON · Current device</small></div></div><div class="st-session" data-session>'+icon('smartphone')+'<div class="st-session-copy"><strong>Safari on iPhone</strong><small>Toronto, ON · Last active yesterday</small></div><button class="st-button danger" data-st-action="revoke-session">'+icon('logout')+'Revoke</button></div></div></section>'}
+function users(target){const shown=state.users.filter(user=>(user.name+' '+user.email+' '+user.role).toLowerCase().includes(search.toLowerCase())&&(!statusFilter||user.status===statusFilter)&&(!roleFilter||user.role===roleFilter)),roles=[...new Set(state.users.map(user=>user.role))];target.innerHTML='<div class="st-section-head"><div><h2>User management</h2><p>Add and manage team members and their access levels.</p></div><button class="st-button primary" data-st-action="add-user">'+icon('person_add')+'Add user</button></div><div class="st-panel"><div class="st-user-toolbar"><div class="st-user-toolbar-main"><label class="st-search">'+icon('search')+'<input type="search" data-st-search placeholder="Search by name or email" aria-label="Search users" value="'+esc(search)+'"></label><button type="button" class="st-button st-filter-toggle" data-st-action="toggle-filters" aria-expanded="'+filtersOpen+'">'+icon('filter_list')+'Filters</button></div><div class="st-filter-panel" '+(filtersOpen?'':'hidden')+'><label class="st-field">Status<select data-st-filter-status><option value="">Select status</option>'+['Active','Pending','Deactivated'].map(value=>'<option '+(statusFilter===value?'selected':'')+'>'+value+'</option>').join('')+'</select></label><label class="st-field">Role<select data-st-filter-role><option value="">Select role</option>'+roles.map(value=>'<option '+(roleFilter===value?'selected':'')+'>'+esc(value)+'</option>').join('')+'</select></label><div class="st-filter-actions"><button type="button" class="st-clear-filters" data-st-action="clear-filters">Clear all filters</button><button type="button" class="st-button primary" data-st-action="apply-filters">Apply</button></div></div></div><div class="st-user-table-wrap"><table class="st-user-table"><thead><tr><th>NAME</th><th>ROLE</th><th>STATUS</th><th>TIME ZONE</th><th>ACTIONS</th></tr></thead><tbody>'+((shown.length?shown.map(user=>'<tr><td class="st-user-name"><strong>'+esc(user.name)+'</strong><small>'+esc(user.email)+'</small></td><td>'+esc(user.role)+'</td><td><span class="st-status">'+esc(user.status)+'</span></td><td>'+esc(user.timezone)+'</td><td><div class="st-user-actions"><button class="st-icon-button" data-st-action="edit-user" data-id="'+esc(user.id)+'" aria-label="Edit '+esc(user.name)+'">'+icon('edit')+'</button><button class="st-icon-button danger" data-st-action="deactivate-user" data-id="'+esc(user.id)+'" aria-label="Deactivate '+esc(user.name)+'" '+(user.status==='Deactivated'?'disabled':'')+'>'+icon('person_remove')+'</button></div></td></tr>').join(''):'<tr><td class="st-empty" colspan="5">No users match your search.</td></tr>'))+'</tbody></table></div></div>'}
+const requiredLabel=label=>'<span class="st-field-label">'+label+' <span class="st-required" aria-hidden="true">*</span></span>';
+function userFormFields(user=null){const nameParts=(user?.name||'').trim().split(/\s+/),first=user?.first||nameParts.shift()||'',last=user?.last||nameParts.join(' '),editing=Boolean(user),activeStatus=!user||user.status==='Active',zones=['America/Toronto','America/Vancouver','UTC'];return '<div class="st-form-grid"><label class="st-field">'+requiredLabel('First name')+'<input name="first" required placeholder="Enter first name" value="'+esc(first)+'"></label><label class="st-field">'+requiredLabel('Last name')+'<input name="last" required placeholder="Enter last name" value="'+esc(last)+'"></label><label class="st-field full">'+requiredLabel('Email address')+'<input name="email" type="email" required placeholder="Enter email address" value="'+esc(user?.email||'')+'"></label><label class="st-field full">Phone number (optional)<input name="phone" type="tel" placeholder="Enter phone number" value="'+esc(user?.phone||'')+'"></label><label class="st-field">'+requiredLabel('Role')+'<select name="role" required><option value="">Select role</option>'+['Administrator','Operator','Report Author','Viewer'].map(role=>'<option '+(user?.role===role?'selected':'')+'>'+role+'</option>').join('')+'</select></label><label class="st-field">'+requiredLabel('Time zone')+'<select name="timezone" required><option value="">Select time zone</option>'+zones.map(zone=>'<option '+(user?.timezone===zone?'selected':'')+'>'+zone+'</option>').join('')+'</select></label><section class="st-account-settings"><h3>Account settings</h3><div class="st-account-settings-body"><div class="st-status-control"><span>Status</span><button type="button" class="st-switch" data-st-dialog-action="toggle-status" aria-label="Account active status" aria-pressed="'+activeStatus+'" '+(editing?'disabled':'')+'></button><span class="st-status-label">'+(activeStatus?'Active':'Inactive')+'</span></div><p>'+(editing?'Status cannot be changed while editing this user.':'A generated password will be sent to the new user’s email address.')+'</p></div></section></div>'}
+function openUserDialog(user=null){const editing=Boolean(user);dialog.className='st-dialog';dialog.innerHTML='<div class="st-dialog-head"><div><h2>'+(editing?'Edit user':'Add user')+'</h2><p>'+(editing?'Update this user’s account details.':'Add a new user to your organization.')+'</p></div><button class="st-dialog-close" data-st-dialog="cancel" aria-label="Close '+(editing?'edit':'add')+' user">'+icon('close')+'</button></div><form id="'+(editing?'stEditUserForm':'stAddUserForm')+'" '+(editing?'data-id="'+esc(user.id)+'"':'')+'><div class="st-dialog-body">'+userFormFields(user)+'</div><div class="st-dialog-footer"><button type="button" class="st-button" data-st-dialog="cancel">Cancel</button><button class="st-button primary" type="submit" '+(editing?'':'disabled')+'>'+(editing?'Save changes':'Invite user')+'</button></div></form>';if(!dialog.open)dialog.showModal();dialog.querySelector('input')?.focus()}
+function addUser(){openUserDialog()}
+function editUser(id){const user=state.users.find(item=>item.id===id);if(user)openUserDialog(user)}
+function confirmDeactivate(id){const user=state.users.find(item=>item.id===id);if(!user)return;dialog.className='st-dialog compact';dialog.innerHTML='<div class="st-dialog-head"><div class="st-dialog-title-row"><span class="st-dialog-status-icon warning">'+icon('error')+'</span><div><h2>Deactivate user</h2><p class="st-dialog-message">Deactivating '+esc(user.name)+' will prevent them from logging in, but their historical actions will remain in the system. Are you sure you want to continue?</p></div></div><button class="st-dialog-close" data-st-dialog="cancel" aria-label="Close deactivation confirmation">'+icon('close')+'</button></div><div class="st-dialog-footer"><button type="button" class="st-button" data-st-dialog="cancel">Cancel</button><button type="button" class="st-button danger-solid" data-st-dialog-action="confirm-deactivate" data-id="'+esc(id)+'">Deactivate user</button></div>';if(!dialog.open)dialog.showModal()}
+function showSuccess(title,message){dialog.className='st-dialog compact st-dialog-success';dialog.innerHTML='<div class="st-dialog-head"><div class="st-dialog-title-row"><span class="st-dialog-status-icon success">'+icon('check_circle')+'</span><div><h2>'+esc(title)+'</h2><p class="st-dialog-message">'+esc(message)+'</p></div></div><button class="st-dialog-close" data-st-dialog="cancel" aria-label="Close success message">'+icon('close')+'</button></div><div class="st-dialog-footer"><button type="button" class="st-button primary" data-st-dialog="cancel">Close</button></div>';if(!dialog.open)dialog.showModal()}
+page.addEventListener('click',event=>{const navId=event.target.closest('[data-st-nav]')?.dataset.stNav;if(navId){active=navId;render();return}const actionButton=event.target.closest('[data-st-action]'),action=actionButton?.dataset.stAction;if(action==='add-user')addUser();if(action==='edit-user')editUser(actionButton.dataset.id);if(action==='deactivate-user')confirmDeactivate(actionButton.dataset.id);if(action==='upload-photo')page.querySelector('[data-st-photo-input]')?.click();if(action==='toggle-filters'){filtersOpen=!filtersOpen;renderContent()}if(action==='apply-filters'){statusFilter=page.querySelector('[data-st-filter-status]')?.value||'';roleFilter=page.querySelector('[data-st-filter-role]')?.value||'';renderContent()}if(action==='clear-filters'){statusFilter='';roleFilter='';renderContent()}if(action==='revoke-session')event.target.closest('[data-session]')?.remove();if(action==='logout-all')page.querySelectorAll('[data-session]').forEach(item=>item.remove());const toggle=event.target.closest('[data-st-password]');if(toggle){const input=page.querySelector('[name="'+toggle.dataset.stPassword+'"]'),show=input.type==='password';input.type=show?'text':'password';toggle.innerHTML=icon(show?'visibility_off':'visibility');toggle.setAttribute('aria-label',(show?'Hide ':'Show ')+toggle.dataset.stPassword+' password')}});
+page.addEventListener('input',event=>{if(event.target.matches('[data-st-search]')){search=event.target.value;users(page.querySelector('#settingsContent'))}});
+page.addEventListener('change',event=>{if(event.target.name==='system'){const select=page.querySelector('[name="timezone"]');select.disabled=event.target.checked;if(event.target.checked)select.value=Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC'}if(event.target.matches('[data-st-photo-input]')){const file=event.target.files?.[0],message=page.querySelector('.st-message');if(!file)return;if(!['image/jpeg','image/png'].includes(file.type)||file.size>5*1024*1024){if(message){message.style.color='#b42329';message.textContent='Choose a JPG or PNG file smaller than 5MB.'}event.target.value='';return}const reader=new FileReader();reader.onload=()=>{state.profile.photo=String(reader.result);persist();syncTopAccount();profile(page.querySelector('#settingsContent'))};reader.readAsDataURL(file)}});
+page.addEventListener('submit',event=>{event.preventDefault();const form=event.target,data=new FormData(form),message=form.querySelector('.st-message');if(form.id==='stProfileForm'){state.profile.first=String(data.get('first')).trim();state.profile.last=String(data.get('last')).trim();state.profile.phone=String(data.get('phone')).trim();persist();syncTopAccount();message.textContent='Profile saved.'}if(form.id==='stZoneForm'){state.useSystem=data.get('system')==='on';state.timezone=state.useSystem?(Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC'):String(data.get('timezone'));persist();const current=page.querySelector('.st-current-zone strong');if(current)current.textContent=zoneLabel(state.timezone);message.textContent='Time zone saved.'}if(form.id==='stPasswordForm'){const next=String(data.get('next')),confirm=String(data.get('confirm'));if(next.length<8||!/[A-Za-z]/.test(next)||!/\d/.test(next)){message.style.color='#b42329';message.textContent='Use at least 8 characters with letters and numbers.';return}if(next!==confirm){message.style.color='#b42329';message.textContent='New passwords do not match.';return}message.style.color='';message.textContent='Password changed.';form.reset()}});
+dialog.addEventListener('click',event=>{if(event.target===dialog||event.target.closest('[data-st-dialog="cancel"]')){dialog.close();return}const button=event.target.closest('[data-st-dialog-action]'),action=button?.dataset.stDialogAction;if(action==='toggle-status'&&!button.disabled){const activeNow=button.getAttribute('aria-pressed')!=='true';button.setAttribute('aria-pressed',String(activeNow));const panel=button.closest('.st-account-settings-body');panel.querySelector('.st-status-label').textContent=activeNow?'Active':'Inactive';panel.querySelector('p').textContent=activeNow?'A generated password will be sent to the new user’s email address.':'The user will be added without login access.'}if(action==='confirm-deactivate'){const user=state.users.find(item=>item.id===button.dataset.id);if(!user)return;user.status='Deactivated';persist();renderContent();showSuccess('User successfully deactivated','The account for '+user.name+' has been successfully deactivated. This user will no longer be able to log in or access the system.')}});
+function syncInvite(){const form=dialog.querySelector('#stAddUserForm');if(form)form.querySelector('[type="submit"]').disabled=!form.checkValidity()}
+dialog.addEventListener('input',syncInvite);dialog.addEventListener('change',syncInvite);
+dialog.addEventListener('submit',event=>{event.preventDefault();const form=event.target,data=new FormData(form),first=String(data.get('first')).trim(),last=String(data.get('last')).trim(),values={first,last,name:first+' '+last,email:String(data.get('email')).trim(),phone:String(data.get('phone')||'').trim(),role:String(data.get('role')),timezone:String(data.get('timezone'))};if(form.id==='stAddUserForm'){const activeStatus=form.querySelector('[data-st-dialog-action="toggle-status"]').getAttribute('aria-pressed')==='true';state.users.push({id:'u'+Date.now(),...values,status:activeStatus?'Active':'Deactivated'});persist();renderContent();showSuccess('User successfully added',activeStatus?'User invited successfully. A generated password will be sent to this user’s email address.':'The user was added without login access.')}if(form.id==='stEditUserForm'){const user=state.users.find(item=>item.id===form.dataset.id);if(!user)return;Object.assign(user,values);persist();renderContent();showSuccess('User successfully updated','The account details for '+user.name+' have been saved.')}});
+document.querySelectorAll('[data-tool="Settings"]').forEach(button=>button.onclick=openSettings);
+setupAccountMenu();addEventListener('hashchange',route);route();
+})();
+</script></body></html>
